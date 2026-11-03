@@ -1,0 +1,739 @@
+{
+ "{\"p\":\"Plan Vial, Santa Rosa\"}": {
+  "lat": -36.6388045,
+  "lon": -64.2675645,
+  "tipo": "suburb",
+  "nombre": "Plan Vial, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, Argentina",
+  "precision": "barrio"
+ },
+ "{\"a\":\"Márquez 1556\"}": {
+  "lat": -36.6327513,
+  "lon": -64.2779663,
+  "tipo": "place",
+  "nombre": "1556, F. Márquez, Congreso, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, L6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Chile 777\"}": {
+  "lat": -36.6311567,
+  "lon": -64.2955237,
+  "tipo": "place",
+  "nombre": "777, Chile, Parque Fitte, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Catamarca 955\"}": {
+  "lat": -36.6142192,
+  "lon": -64.294446,
+  "tipo": "place",
+  "nombre": "955, Catamarca, Tomás Mason Sur, Villa Tomás Mason, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"x\":[\"Larrea\",\"Paladino\"]}": {
+  "lat": -36.6122031,
+  "lon": -64.2730279,
+  "tipo": "esquina",
+  "nombre": "Larrea y Paladino",
+  "precision": "esquina"
+ },
+ "{\"a\":\"Pico 247\"}": {
+  "lat": -36.6193035,
+  "lon": -64.2937477,
+  "tipo": "place",
+  "nombre": "247, General Pico, Centro, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Centeno 540\"}": {
+  "lat": -36.6224477,
+  "lon": -64.2990932,
+  "tipo": "place",
+  "nombre": "540, Centeno, Centro, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"x\":[\"Búho\",\"Benteveo\"]}": {
+  "lat": -36.6498007,
+  "lon": -64.3424305,
+  "tipo": "esquina",
+  "nombre": "Búho y Benteveo",
+  "precision": "esquina"
+ },
+ "{\"a\":\"Hilario Lagos 344\"}": {
+  "lat": -36.6188763,
+  "lon": -64.2867468,
+  "tipo": "place",
+  "nombre": "344, Hilario Lagos, Centro, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Don Bosco 330\"}": {
+  "lat": -36.6240651,
+  "lon": -64.2955712,
+  "tipo": "place",
+  "nombre": "330, Don Bosco, Centro, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Alem 64\"}": {
+  "lat": -36.6231461,
+  "lon": -64.2904523,
+  "tipo": "place",
+  "nombre": "64, Alem, Centro, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Córdoba 329\"}": {
+  "lat": -36.6174482,
+  "lon": -64.2761921,
+  "tipo": "place",
+  "nombre": "329, Córdoba, Villa Alonso, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"José Luro 576\"}": {
+  "lat": -36.6288005,
+  "lon": -64.3017722,
+  "tipo": "residential",
+  "nombre": "José Luro, Villa Santillán Oeste, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "calle"
+ },
+ "{\"a\":\"Almirante Brown 140\"}": {
+  "lat": -36.6021128,
+  "lon": -64.2871698,
+  "tipo": "secondary",
+  "nombre": "Almirante Brown, Villa Uhalde, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "calle"
+ },
+ "{\"a\":\"Valerga 836\"}": {
+  "lat": -36.6325891,
+  "lon": -64.2959642,
+  "tipo": "place",
+  "nombre": "836, Comisario Valerga, Villa Santillán, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Roque Sáenz Peña 1368\"}": {
+  "lat": -36.630518,
+  "lon": -64.2833956,
+  "tipo": "place",
+  "nombre": "1368, Roque Sáenz Peña, Nuestra Señora de Luján, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Crispiniano Fernández 415\"}": {
+  "lat": -36.6063424,
+  "lon": -64.2784876,
+  "tipo": "residential",
+  "nombre": "Crispiniano Fernández, Aeropuerto, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "calle"
+ },
+ "{\"a\":\"Pavón 975\"}": {
+  "lat": -36.6068903,
+  "lon": -64.3001004,
+  "tipo": "residential",
+  "nombre": "Pavón, Zona Norte, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "calle"
+ },
+ "{\"x\":[\"Cervantes\",\"Sarmiento\"]}": {
+  "lat": -36.6177582,
+  "lon": -64.297638,
+  "tipo": "esquina",
+  "nombre": "Cervantes y Sarmiento",
+  "precision": "esquina"
+ },
+ "{\"x\":[\"Rivera\",\"Independencia\"]}": {
+  "lat": -36.6714427,
+  "lon": -64.3699704,
+  "tipo": "esquina",
+  "nombre": "Rivera y Independencia",
+  "precision": "esquina"
+ },
+ "{\"x\":[\"Martín Fierro\",\"Pasteur\"]}": {
+  "lat": -36.6269032,
+  "lon": -64.281964,
+  "tipo": "esquina",
+  "nombre": "Martín Fierro y Pasteur",
+  "precision": "esquina"
+ },
+ "{\"x\":[\"Garibaldi\",\"O'Higgins\"]}": {
+  "lat": -36.6241036,
+  "lon": -64.2847127,
+  "tipo": "esquina",
+  "nombre": "Garibaldi y O'Higgins",
+  "precision": "esquina"
+ },
+ "{\"a\":\"Roque Sáenz Peña 949, Toay\"}": null,
+ "{\"a\":\"Coronel Gil 520\"}": {
+  "lat": -36.6223025,
+  "lon": -64.2901689,
+  "tipo": "building",
+  "nombre": "520, Coronel Gil, Centro, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, L6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"x\":[\"San Cayetano\",\"Ramona Pereyra\"]}": {
+  "lat": -36.65042,
+  "lon": -64.2677378,
+  "tipo": "esquina",
+  "nombre": "San Cayetano y Ramona Pereyra",
+  "precision": "esquina"
+ },
+ "{\"x\":[\"9 de Julio\",\"Pellegrini\"]}": {
+  "lat": -36.6198468,
+  "lon": -64.2924764,
+  "tipo": "esquina",
+  "nombre": "9 de Julio y Pellegrini",
+  "precision": "esquina"
+ },
+ "{\"a\":\"Spinetto 49\"}": {
+  "lat": -36.6048483,
+  "lon": -64.2810076,
+  "tipo": "primary",
+  "nombre": "Avenida Agustín Spinetto, Aeropuerto, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "calle"
+ },
+ "{\"a\":\"Ayala 128\"}": {
+  "lat": -36.6180876,
+  "lon": -64.3003278,
+  "tipo": "place",
+  "nombre": "128, Ayala, Centro, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Avenida Luro 1015\"}": {
+  "lat": -36.6274938,
+  "lon": -64.2815512,
+  "tipo": "place",
+  "nombre": "1015, Avenida Pedro Luro, Nuestra Señora de Luján, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Ayala 178\"}": {
+  "lat": -36.6185,
+  "lon": -64.3003241,
+  "tipo": "place",
+  "nombre": "178, Ayala, Centro, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Sarmiento 241\"}": {
+  "lat": -36.6177625,
+  "lon": -64.3012736,
+  "tipo": "residential",
+  "nombre": "Sarmiento, Almafuerte, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "calle"
+ },
+ "{\"a\":\"Márquez 1516\"}": {
+  "lat": -36.6323114,
+  "lon": -64.2785163,
+  "tipo": "place",
+  "nombre": "1516, F. Márquez, Congreso, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, L6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Bolivia 1455\"}": {
+  "lat": -36.6322109,
+  "lon": -64.2999722,
+  "tipo": "place",
+  "nombre": "1455, Bolivia, Villa Santillán Oeste, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Plumerillo 156\"}": {
+  "lat": -36.6274492,
+  "lon": -64.2795876,
+  "tipo": "place",
+  "nombre": "156, Plumerillo, Bella Vista, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, L6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Santa Cruz 73\"}": {
+  "lat": -36.6083086,
+  "lon": -64.2829094,
+  "tipo": "place",
+  "nombre": "73, Santa Cruz, Villa del Busto, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Joaquín V. González 649\"}": null,
+ "{\"a\":\"Alem 254\"}": {
+  "lat": -36.623127,
+  "lon": -64.2879412,
+  "tipo": "place",
+  "nombre": "254, Alem, Centro, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Villegas 260\"}": {
+  "lat": -36.6194002,
+  "lon": -64.2951743,
+  "tipo": "place",
+  "nombre": "260, Villegas, Centro, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"p\":\"Butaló, Santa Rosa\"}": {
+  "lat": -36.6310424,
+  "lon": -64.3065159,
+  "tipo": "suburb",
+  "nombre": "Butaló, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, Argentina",
+  "precision": "barrio"
+ },
+ "{\"a\":\"Virgen de Fátima 2803\"}": {
+  "lat": -36.6545011,
+  "lon": -64.2769185,
+  "tipo": "place",
+  "nombre": "2803, Vírgen de Fátima, Escondido, Portal del Sur, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, L6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Avenida Uruguay 654\"}": {
+  "lat": -36.6251291,
+  "lon": -64.2997201,
+  "tipo": "place",
+  "nombre": "654, Avenida Uruguay, Centro, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"x\":[\"Blanco Encalada\",\"Ramona Pereyra\"]}": null,
+ "{\"a\":\"España 155, Toay\"}": {
+  "lat": -36.6665128,
+  "lon": -64.3675464,
+  "tipo": "place",
+  "nombre": "155, España, Mattiauda, Aguas Buenas, Toay, Municipio de Toay, Departamento Toay, La Pampa, L6303, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Alsina 233\"}": {
+  "lat": -36.6167678,
+  "lon": -64.2942401,
+  "tipo": "place",
+  "nombre": "233, Alsina, Centro, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"x\":[\"Victoria\",\"Entre Ríos\"]}": {
+  "lat": -36.6156746,
+  "lon": -64.2773538,
+  "tipo": "esquina",
+  "nombre": "Victoria y Entre Ríos",
+  "precision": "esquina"
+ },
+ "{\"x\":[\"Pasteur\",\"Mármol\"]}": {
+  "lat": -36.6276676,
+  "lon": -64.2829171,
+  "tipo": "esquina",
+  "nombre": "Pasteur y Mármol",
+  "precision": "esquina"
+ },
+ "{\"x\":[\"Neuquén\",\"Salta\"]}": {
+  "lat": -36.6105187,
+  "lon": -64.2937079,
+  "tipo": "esquina",
+  "nombre": "Neuquén y Salta",
+  "precision": "esquina"
+ },
+ "{\"x\":[\"Ramona Pereyra\",\"Gentili\"]}": {
+  "lat": -36.6387474,
+  "lon": -64.2675066,
+  "tipo": "esquina",
+  "nombre": "Ramona Pereyra y Gentili",
+  "precision": "esquina"
+ },
+ "{\"x\":[\"Victoria\",\"Pampa\"]}": {
+  "lat": -36.6145974,
+  "lon": -64.2773381,
+  "tipo": "esquina",
+  "nombre": "Victoria y Pampa",
+  "precision": "esquina"
+ },
+ "{\"x\":[\"Montaldo\",\"Salveire\"]}": {
+  "lat": -36.5883064,
+  "lon": -64.2840253,
+  "tipo": "esquina",
+  "nombre": "Montaldo y Salveire",
+  "precision": "esquina"
+ },
+ "{\"x\":[\"Chaco\",\"Catamarca\"]}": {
+  "lat": -36.6139201,
+  "lon": -64.2833682,
+  "tipo": "esquina",
+  "nombre": "Chaco y Catamarca",
+  "precision": "esquina"
+ },
+ "{\"x\":[\"Chaco\",\"Mendoza\"]}": {
+  "lat": -36.6112857,
+  "lon": -64.2833592,
+  "tipo": "esquina",
+  "nombre": "Chaco y Mendoza",
+  "precision": "esquina"
+ },
+ "{\"x\":[\"Independencia\",\"Constituyentes\"]}": {
+  "lat": -36.6265614,
+  "lon": -64.2755472,
+  "tipo": "esquina",
+  "nombre": "Independencia y Constituyentes",
+  "precision": "esquina"
+ },
+ "{\"x\":[\"Calegaris\",\"Schmidt\"]}": {
+  "lat": -36.6377195,
+  "lon": -64.2769038,
+  "tipo": "esquina",
+  "nombre": "Calegaris y Schmidt",
+  "precision": "esquina"
+ },
+ "{\"a\":\"Argentino Valle 756\"}": {
+  "lat": -36.6255892,
+  "lon": -64.2727179,
+  "tipo": "place",
+  "nombre": "756, Avenida Argentino Valle, Bella Vista, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, L6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"x\":[\"Provincialista\",\"Forchieri\"]}": {
+  "lat": -36.6034411,
+  "lon": -64.2748308,
+  "tipo": "esquina",
+  "nombre": "Provincialista y Forchieri",
+  "precision": "esquina"
+ },
+ "{\"a\":\"Medici 331\"}": {
+  "lat": -36.6297218,
+  "lon": -64.2775888,
+  "tipo": "place",
+  "nombre": "331, Pedro Médici Norte, Congreso, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, L6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Lope de Vega 1095\"}": {
+  "lat": -36.6337502,
+  "lon": -64.2922713,
+  "tipo": "place",
+  "nombre": "1095, Lope de Vega, Villa Santillán, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"p\":\"Hospital Favaloro, Santa Rosa\"}": {
+  "lat": -36.5958435,
+  "lon": -64.2917799,
+  "tipo": "amenity",
+  "nombre": "Hospital de Complejidad Creciente \"Doctor René Favaloro\", 914, Aconcagua, Villa Germinal, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, L6300, Argentina",
+  "precision": "barrio"
+ },
+ "{\"a\":\"José Ingenieros 1341\"}": {
+  "lat": -36.6333181,
+  "lon": -64.2872907,
+  "tipo": "place",
+  "nombre": "1341, José Ingenieros, Villa Santillán, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Avenida San Martín Oeste 234\"}": {
+  "lat": -36.6208947,
+  "lon": -64.2924834,
+  "tipo": "secondary",
+  "nombre": "Avenida San Martín Oeste, Centro, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "calle"
+ },
+ "{\"p\":\"Centro Cívico, Santa Rosa\"}": {
+  "lat": -36.6215071,
+  "lon": -64.2793157,
+  "tipo": "office",
+  "nombre": "Casa de Gobierno, Avenida General San Martin, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "barrio"
+ },
+ "{\"a\":\"Alem 171\"}": {
+  "lat": -36.6228086,
+  "lon": -64.2890872,
+  "tipo": "building",
+  "nombre": "171, Alem, Centro, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, L6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Lorusso 534\"}": null,
+ "{\"a\":\"Edison 1056\"}": {
+  "lat": -36.6296732,
+  "lon": -64.2882522,
+  "tipo": "place",
+  "nombre": "1056, Boulevard Tomás Edison, Villa Santillán, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Carriego 1766\"}": {
+  "lat": -36.6396046,
+  "lon": -64.2969321,
+  "tipo": "place",
+  "nombre": "1766, Evaristo Carriego, 26 de Septiembre, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Santiago del Estero 675\"}": {
+  "lat": -36.6020463,
+  "lon": -64.2923585,
+  "tipo": "residential",
+  "nombre": "Santiago del Estero, Tomás Mason Norte, Villa Tomás Mason, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "calle"
+ },
+ "{\"a\":\"Delfín Gallo 1284\"}": {
+  "lat": -36.6321593,
+  "lon": -64.2871107,
+  "tipo": "place",
+  "nombre": "1284, Delfín Gallo, Villa Santillán, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Villegas 641\"}": {
+  "lat": -36.6235137,
+  "lon": -64.2950679,
+  "tipo": "place",
+  "nombre": "641, Villegas, Centro, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Escalante 753\"}": {
+  "lat": -36.623141,
+  "lon": -64.300979,
+  "tipo": "place",
+  "nombre": "753, Escalante, Centro, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Andrada 439\"}": {
+  "lat": -36.6321257,
+  "lon": -64.2762863,
+  "tipo": "place",
+  "nombre": "439, Clemente José Andrada, Congreso, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, L6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Pico 539\"}": {
+  "lat": -36.6224701,
+  "lon": -64.2937691,
+  "tipo": "place",
+  "nombre": "539, General Pico, Centro, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Congreso 1771\"}": {
+  "lat": -36.6295511,
+  "lon": -64.2570781,
+  "tipo": "place",
+  "nombre": "1771, Congreso, Campos del Alba, Villa Hilda, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, L6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Téllez 581\"}": {
+  "lat": -36.6330737,
+  "lon": -64.2748203,
+  "tipo": "place",
+  "nombre": "581, Baldomero Téllez, Congreso, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, L6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Roque Sáenz Peña 1035\"}": {
+  "lat": -36.6278823,
+  "lon": -64.2863068,
+  "tipo": "place",
+  "nombre": "1035, Roque Sáenz Peña, Nuestra Señora de Luján, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"p\":\"Barrio Atuel, Santa Rosa\"}": null,
+ "{\"a\":\"Gavazza 1359\"}": {
+  "lat": -36.6173631,
+  "lon": -64.2622979,
+  "tipo": "place",
+  "nombre": "1359, Ángel Gavazza, Villa Alonso Este, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, L6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"x\":[\"Coronel Gil\",\"Pellegrini\"]}": null,
+ "{\"x\":[\"Pasteur\",\"Roque Sáenz Peña\"]}": {
+  "lat": -36.6291878,
+  "lon": -64.2848123,
+  "tipo": "esquina",
+  "nombre": "Pasteur y Roque Sáenz Peña",
+  "precision": "esquina"
+ },
+ "{\"a\":\"César Rodríguez 2193\"}": {
+  "lat": -36.6494491,
+  "lon": -64.2939204,
+  "tipo": "place",
+  "nombre": "2193, César Rodríguez, Sur, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Santa Cruz 85\"}": {
+  "lat": -36.6083149,
+  "lon": -64.2830323,
+  "tipo": "place",
+  "nombre": "85, Santa Cruz, Villa del Busto, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"O'Higgins 156\"}": {
+  "lat": -36.6241849,
+  "lon": -64.2892497,
+  "tipo": "place",
+  "nombre": "156, O'Higgins, Centro, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Guevara 1180\"}": {
+  "lat": -36.6045276,
+  "lon": -64.2734016,
+  "tipo": "place",
+  "nombre": "1180, Arturo Guevara, Aeropuerto, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, L6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"p\":\"Barrio Jardín, Santa Rosa\"}": null,
+ "{\"a\":\"Santa Fe 336\"}": {
+  "lat": -36.6173631,
+  "lon": -64.2800678,
+  "tipo": "place",
+  "nombre": "336, Santa Fe, Villa Alonso, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Schmidt 1765\"}": {
+  "lat": -36.6425645,
+  "lon": -64.2603987,
+  "tipo": "place",
+  "nombre": "1765, Enriqueta Schmidt Sur, Esperanza, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, L6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"9 de Julio 98\"}": {
+  "lat": -36.6198059,
+  "lon": -64.2923429,
+  "tipo": "place",
+  "nombre": "98, 9 de Julio, Centro, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Joaquín V. González 490\"}": null,
+ "{\"x\":[\"Vélez Sarsfield\",\"Alberdi\"]}": null,
+ "{\"a\":\"Avenida Luro 1600\"}": {
+  "lat": -36.6364305,
+  "lon": -64.2822171,
+  "tipo": "primary",
+  "nombre": "Avenida Pedro Luro, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, L6300, Argentina",
+  "precision": "calle"
+ },
+ "{\"x\":[\"Juan XXIII\",\"Pasteur\"]}": {
+  "lat": -36.6330378,
+  "lon": -64.2896116,
+  "tipo": "esquina",
+  "nombre": "Juan XXIII y Pasteur",
+  "precision": "esquina"
+ },
+ "{\"a\":\"Cervantes 545\"}": {
+  "lat": -36.6225146,
+  "lon": -64.297651,
+  "tipo": "place",
+  "nombre": "545, Cervantes, Centro, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Alem 555\"}": {
+  "lat": -36.6230131,
+  "lon": -64.2840202,
+  "tipo": "place",
+  "nombre": "555, Alem, Centro, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"x\":[\"Centeno\",\"San Martín\"]}": {
+  "lat": -36.6208993,
+  "lon": -64.2989666,
+  "tipo": "esquina",
+  "nombre": "Centeno y San Martín",
+  "precision": "esquina"
+ },
+ "{\"x\":[\"Perón\",\"General Acha\"]}": {
+  "lat": -36.6316597,
+  "lon": -64.3116153,
+  "tipo": "esquina",
+  "nombre": "Perón y General Acha",
+  "precision": "esquina"
+ },
+ "{\"p\":\"Médanos Verdes, Santa Rosa\"}": {
+  "lat": -36.624701,
+  "lon": -64.2557901,
+  "tipo": "leisure",
+  "nombre": "Club Médanos Verdes, 890, León Nicanoff, Villa Martita, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, L6300, Argentina",
+  "precision": "barrio"
+ },
+ "{\"x\":[\"Quintana\",\"Ayala\"]}": {
+  "lat": -36.618802,
+  "lon": -64.3002575,
+  "tipo": "esquina",
+  "nombre": "Quintana y Ayala",
+  "precision": "esquina"
+ },
+ "{\"p\":\"Barrio Empleados de Comercio, Santa Rosa\"}": null,
+ "{\"a\":\"Córdoba 256\"}": {
+  "lat": -36.6178342,
+  "lon": -64.2780062,
+  "tipo": "place",
+  "nombre": "256, Córdoba, Villa Alonso, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Plumerillo 100\"}": {
+  "lat": -36.6274446,
+  "lon": -64.2802417,
+  "tipo": "place",
+  "nombre": "100, Plumerillo, Bella Vista, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, L6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Andrada 280\"}": {
+  "lat": -36.631612,
+  "lon": -64.2781462,
+  "tipo": "place",
+  "nombre": "280, Clemente José Andrada Norte, Congreso, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, L6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Filiberto 2716\"}": {
+  "lat": -36.5892394,
+  "lon": -64.2941909,
+  "tipo": "residential",
+  "nombre": "Juan de Dios Filiberto, Villa Germinal, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "calle"
+ },
+ "{\"a\":\"La Rioja 325\"}": {
+  "lat": -36.6138152,
+  "lon": -64.2912014,
+  "tipo": "place",
+  "nombre": "325, La Rioja, Tomás Mason Sur, Villa Tomás Mason, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"p\":\"Doblas, Santa Rosa\"}": null,
+ "{\"a\":\"Argentino Valle 136\"}": {
+  "lat": -36.625538,
+  "lon": -64.2798422,
+  "tipo": "place",
+  "nombre": "136, Avenida Argentino Valle, Bella Vista, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, L6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Garibaldi 777\"}": {
+  "lat": -36.6251145,
+  "lon": -64.2846473,
+  "tipo": "place",
+  "nombre": "777, Garibaldi, Centro, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Sarmiento 426\"}": {
+  "lat": -36.617749,
+  "lon": -64.2967777,
+  "tipo": "place",
+  "nombre": "426, Sarmiento, Centro, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Moreno 151\"}": {
+  "lat": -36.6182897,
+  "lon": -64.2859363,
+  "tipo": "place",
+  "nombre": "151, Moreno, Centro, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"O'Higgins 539\"}": {
+  "lat": -36.6240659,
+  "lon": -64.2842008,
+  "tipo": "place",
+  "nombre": "539, O'Higgins, Centro, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"p\":\"Avenida de los Paraísos 700, Santa Rosa\"}": null,
+ "{\"x\":[\"1 de Mayo\",\"Almirante Brown\"]}": {
+  "lat": -36.6156665,
+  "lon": -64.2872664,
+  "tipo": "esquina",
+  "nombre": "1 de Mayo y Almirante Brown",
+  "precision": "esquina"
+ },
+ "{\"a\":\"Sáenz Peña 949, Toay\"}": {
+  "lat": -36.6717589,
+  "lon": -64.3760613,
+  "tipo": "place",
+  "nombre": "949, Sáenz Peña, Centro, Toay, Municipio de Toay, Departamento Toay, La Pampa, 6303, Argentina",
+  "precision": "exacta"
+ },
+ "{\"x\":[\"Sarmiento\",\"Pico\"]}": {
+  "lat": -36.6177581,
+  "lon": -64.2937569,
+  "tipo": "esquina",
+  "nombre": "Sarmiento y Pico",
+  "precision": "esquina"
+ },
+ "{\"a\":\"González 649\"}": {
+  "lat": -36.6235835,
+  "lon": -64.2963826,
+  "tipo": "place",
+  "nombre": "649, Joaquín González, Centro, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Loruso 534\"}": null,
+ "{\"p\":\"Río Atuel, Santa Rosa\"}": null,
+ "{\"x\":[\"Gil\",\"Pellegrini\"]}": null,
+ "{\"a\":\"González 490\"}": {
+  "lat": -36.6218427,
+  "lon": -64.2965027,
+  "tipo": "place",
+  "nombre": "490, Joaquín González, Centro, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"x\":[\"Vélez Sársfield\",\"Alberdi\"]}": null
+}

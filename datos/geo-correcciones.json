@@ -1,0 +1,11 @@
+{
+ "DdmWSM2GMsQ": {"lat": -36.6413, "lon": -64.2786, "precision": "barrio", "nota": "Barrio Atuel (OSM: Atuel, Colonia Escalante)"},
+ "dest-ascheri-1": {"lat": -36.6413, "lon": -64.2786, "precision": "barrio", "nota": "Barrio Río Atuel (OSM: Atuel)"},
+ "DfGDdy-Pv48": {"lat": -36.6188, "lon": -64.2898, "precision": "calle", "nota": "Sobre Coronel Gil, a pasos de Plaza San Martín; sin número"},
+ "la2": {"lat": -36.6412, "lon": -64.2969, "precision": "calle", "nota": "Sobre Vélez Sarsfield; el cruce con Alberdi no está en el mapa"},
+ "dest-fernandez-1": {"lat": -36.6655, "lon": -64.3423, "precision": "calle", "localidad": "Toay", "nota": "OSM tiene 'Ave del Paraíso' en Lowo Che, Toay; la placa dice 'A. de Paraíso 700'"},
+ "DehEgGpliqb": null,
+ "DeJ29x9FY7G": null,
+ "la16": null,
+ "hist-ferrari-4": null
+}

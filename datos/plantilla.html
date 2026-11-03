@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alquileres Santa Rosa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<style>
+  :root {
+    --fondo: #F2F4F7;      /* gris frío */
+    --papel: #FFFFFF;
+    --tinta: #16202E;      /* casi negro azulado */
+    --tenue: #46505F;      /* texto secundario */
+    --azul: #0B4F9C;       /* azul cartel de calle */
+    --azul-claro: #DCE7F5;
+    --gris: #7B8494;       /* alquilados */
+    --linea: #C9D0DA;
+    --radio: 6px;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body { background: var(--fondo); color: var(--tinta); font: 15px/1.4 'Atkinson Hyperlegible', sans-serif; }
+  button, input, select { font: inherit; color: inherit; }
+
+  .barra { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 24px; padding: 12px 16px; background: var(--azul); color: #fff; }
+  .barra h1 { margin: 0; font-size: 20px; }
+  .barra p { margin: 0; font-size: 14px; }
+
+  .app { display: grid; grid-template-columns: 420px 1fr; height: calc(100% - 50px); }
+  .panel { display: flex; flex-direction: column; min-height: 0; border-right: 1px solid var(--linea); background: var(--papel); }
+  #mapa { min-height: 300px; }
+
+  .filtros { padding: 12px 16px; border-bottom: 1px solid var(--linea); display: grid; gap: 10px; }
+  .grupo { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; }
+  .grupo > span { width: 92px; color: var(--tenue); font-size: 13px; }
+  .op { display: inline-flex; align-items: center; gap: 4px; padding: 3px 8px; border: 1px solid var(--linea); border-radius: var(--radio); cursor: pointer; font-size: 14px; }
+  .op input { margin: 0; }
+  .op:has(input:checked) { border-color: var(--azul); background: var(--azul-claro); }
+  select, input[type=range] { accent-color: var(--azul); }
+  select { padding: 3px 6px; border: 1px solid var(--linea); border-radius: var(--radio); background: var(--papel); }
+  #tope { width: 150px; }
+
+  .vistas { display: flex; border-bottom: 1px solid var(--linea); }
+  .vistas button { flex: 1; padding: 8px; border: 0; background: none; cursor: pointer; border-bottom: 3px solid transparent; }
+  .vistas button[aria-selected=true] { border-bottom-color: var(--azul); font-weight: 700; }
+  .resumen { padding: 8px 16px; font-size: 13px; color: var(--tenue); border-bottom: 1px solid var(--linea); }
+
+  .lista { overflow-y: auto; flex: 1; }
+  .fila { display: grid; grid-template-columns: 76px 1fr; gap: 10px; padding: 10px 16px; border-bottom: 1px solid var(--linea); cursor: pointer; }
+  .fila:hover, .fila.activa { background: var(--azul-claro); }
+  .fila img, .sinfoto { width: 76px; height: 76px; object-fit: cover; border-radius: var(--radio); background: var(--fondo); }
+  .sinfoto { display: grid; place-items: center; font-size: 12px; color: var(--tenue); text-align: center; }
+  .precio { font-size: 18px; font-weight: 700; }
+  .total { font-size: 13px; color: var(--tenue); }
+  .dir { margin-top: 2px; }
+  .meta { font-size: 13px; color: var(--tenue); }
+  .etq { display: inline-block; padding: 0 6px; margin-right: 4px; border: 1px solid var(--tinta); border-radius: 4px; font-size: 12px; font-weight: 700; }
+  .etq.d2 { background: var(--azul); border-color: var(--azul); color: #fff; }
+  .etq.d1 { color: var(--azul); border-color: var(--azul); }
+  .etq.alq { border-color: var(--gris); color: var(--gris); }
+  .fila.alquilado .precio { color: var(--gris); text-decoration: line-through; }
+
+  .comparar { overflow-y: auto; flex: 1; padding: 12px 16px; display: none; }
+  .comparar table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .comparar th, .comparar td { padding: 6px 4px; border-bottom: 1px solid var(--linea); text-align: right; }
+  .comparar th:first-child, .comparar td:first-child { text-align: left; }
+  .comparar h2 { font-size: 16px; margin: 4px 0 8px; }
+  .comparar p { font-size: 13px; color: var(--tenue); }
+
+  .pin { padding: 2px 6px; border-radius: 4px; font: 700 12px/1.3 'Atkinson Hyperlegible', sans-serif; white-space: nowrap; transform: translate(-50%, -100%); position: absolute; }
+  .pin::after { content: ''; position: absolute; left: 50%; bottom: -5px; margin-left: -5px; border: 5px solid transparent; border-bottom: 0; border-top-color: inherit; }
+  .pin.d2 { background: var(--azul); color: #fff; border: 2px solid var(--azul); }
+  .pin.d1 { background: #fff; color: var(--azul); border: 2px solid var(--azul); }
+  .pin.dx { background: #fff; color: var(--tinta); border: 2px solid var(--tinta); }
+  .pin.arena { border-style: dashed; }
+  .pin.alquilado { background: #fff; color: var(--gris); border: 2px solid var(--gris); }
+  .pin.aprox { opacity: .8; }
+  .pin.activo { outline: 3px solid var(--tinta); z-index: 1000; }
+  .leaflet-div-icon { background: none; border: 0; }
+  .pin .corto { display: none; }
+  .lejos .pin .largo { display: none; }
+  .lejos .pin .corto { display: inline; }
+  .lejos .pin { padding: 0 4px; font-size: 11px; }
+
+  .pop img { width: 100%; height: 170px; object-fit: cover; border-radius: var(--radio); margin-bottom: 6px; }
+  .pop h3 { margin: 0 0 4px; font-size: 16px; }
+  .pop p { margin: 4px 0; }
+  .pop a { color: var(--azul); }
+  .leaflet-popup-content { font: 14px/1.4 'Atkinson Hyperlegible', sans-serif; width: 270px !important; }
+  .leaflet-popup-content-wrapper { border-radius: var(--radio); }
+
+  .leyenda { background: var(--papel); padding: 8px 10px; border-radius: var(--radio); border: 1px solid var(--linea); font-size: 13px; display: grid; gap: 6px; }
+  .leyenda .pin { position: static; transform: none; display: inline-block; margin-right: 6px; }
+  .leyenda .pin::after { display: none; }
+
+  @media (max-width: 800px) {
+    .app { grid-template-columns: 1fr; grid-template-rows: 55vh auto; height: auto; }
+    #mapa { order: -1; height: 55vh; }
+    .panel { border-right: 0; }
+    .lista, .comparar { overflow: visible; }
+    .barra { padding: 10px 16px; }
+  }
+</style>
+</head>
+<body>
+<header class="barra">
+  <h1>Alquileres en Santa Rosa</h1>
+  <p>Relevado el __FECHA__ en 34 cuentas de Instagram de inmobiliarias y los clasificados de La Arena. Publicaciones desde el 15 de septiembre.</p>
+</header>
+<main class="app">
+  <section class="panel">
+    <div class="filtros">
+      <div class="grupo"><span>Dormitorios</span>
+        <label class="op"><input type="checkbox" name="dorm" value="2" checked>2</label>
+        <label class="op"><input type="checkbox" name="dorm" value="1" checked>1</label>
+        <label class="op"><input type="checkbox" name="dorm" value="x">Sin dato</label>
+      </div>
+      <div class="grupo"><span>Tipo</span>
+        <label class="op"><input type="checkbox" name="tipo" value="Depto" checked>Depto</label>
+        <label class="op"><input type="checkbox" name="tipo" value="Casa" checked>Casa</label>
+        <label class="op"><input type="checkbox" name="tipo" value="Dúplex" checked>Dúplex</label>
+      </div>
+      <div class="grupo"><span>Fuente</span>
+        <label class="op"><input type="checkbox" name="fuente" value="Instagram" checked>Instagram</label>
+        <label class="op"><input type="checkbox" name="fuente" value="La Arena" checked>Clasificados La Arena</label>
+      </div>
+      <div class="grupo"><span>Incluir</span>
+        <label class="op"><input type="checkbox" id="verAlquilados">Ya alquilados</label>
+        <label class="op"><input type="checkbox" id="verToay" checked>Toay</label>
+        <label class="op"><input type="checkbox" id="verSinPrecio" checked>Sin precio</label>
+      </div>
+      <div class="grupo"><span>Precio</span>
+        <select id="base"><option value="total">Alquiler + gastos</option><option value="precio">Solo alquiler</option></select>
+        <span style="width:auto">hasta</span><input type="range" id="tope" min="300000" max="1200000" step="25000" value="1200000"><strong id="topeTxt"></strong>
+      </div>
+      <div class="grupo"><span>Ordenar por</span>
+        <select id="orden">
+          <option value="monto">Precio, de menor a mayor</option>
+          <option value="fecha">Más nuevos primero</option>
+          <option value="metros">Cercanía a Plaza San Martín</option>
+        </select>
+      </div>
+    </div>
+    <div class="vistas" role="tablist">
+      <button role="tab" aria-selected="true" data-vista="lista">Lista</button>
+      <button role="tab" aria-selected="false" data-vista="comparar">Comparar por zona</button>
+    </div>
+    <div class="resumen" id="resumen"></div>
+    <div class="lista" id="lista"></div>
+    <div class="comparar" id="comparar"></div>
+  </section>
+  <div id="mapa"></div>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+const DATOS = /*DATOS*/[];
+const PLAZA = /*PLAZA*/{};
+
+const $ = s => document.querySelector(s);
+const pesos = n => '$' + Math.round(n).toLocaleString('es-AR');
+const corto = n => n >= 1e6 ? '$' + (n / 1e6).toFixed(n % 1e6 ? 2 : 0).replace('.', ',') + ' M' : '$' + Math.round(n / 1000) + ' mil';
+const fechaTxt = f => { const [a, m, d] = f.split('-'); return `${+d} de ${['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'][m - 1]}`; };
+const monto = f => $('#base').value === 'total' ? f.total : f.precio;
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+const mapa = L.map('mapa', { zoomControl: true }).setView([PLAZA.lat, PLAZA.lon], 14);
+// Los mosaicos de OpenStreetMap se bloquean al abrir el archivo con doble clic; los de Esri no
+L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+  attribution: 'Mapa &copy; Esri, OpenStreetMap', maxZoom: 19
+}).addTo(mapa);
+// De lejos los pines muestran solo los dormitorios; el precio aparece al acercarse
+const escala = () => mapa.getContainer().classList.toggle('lejos', mapa.getZoom() < 16);
+mapa.on('zoomend', escala);
+escala();
+L.circleMarker([PLAZA.lat, PLAZA.lon], { radius: 5, color: '#16202E', weight: 2, fillOpacity: 0 }).addTo(mapa).bindTooltip('Plaza San Martín');
+
+const leyenda = L.control({ position: 'bottomright' });
+leyenda.onAdd = () => {
+  const d = L.DomUtil.create('div', 'leyenda');
+  d.innerHTML = `<div><span class="pin d2">2D</span>2 dormitorios</div>
+    <div><span class="pin d1">1D</span>1 dormitorio</div>
+    <div><span class="pin d1 arena">LA</span>borde punteado: La Arena</div>
+    <div><span class="pin alquilado">ALQ</span>ya alquilado</div>`;
+  return d;
+};
+leyenda.addTo(mapa);
+
+const capa = L.layerGroup().addTo(mapa);
+const marcadores = {};
+
+function etiquetaDorm(f) { return f.dorm ? `${f.dorm}D` : '?D'; }
+
+function popup(f) {
+  const m = monto(f);
+  return `<div class="pop">
+    ${f.foto ? `<img src="${esc(f.foto)}" alt="">` : ''}
+    <h3>${f.precio ? pesos(f.precio) : 'Sin precio publicado'}${f.estado === 'alquilado' ? ' (ya alquilado)' : ''}</h3>
+    ${f.precio_nota ? `<p>${esc(f.precio_nota)}</p>` : ''}
+    ${f.total && f.gastos ? `<p><strong>Total aprox.: ${pesos(f.total)}</strong></p>` : ''}
+    <p>${f.dorm ? f.dorm + ' dormitorio' + (f.dorm > 1 ? 's' : '') : 'Dormitorios sin dato'}, ${esc(f.tipo)}</p>
+    <p>${esc(f.direccion || 'Sin dirección')}${f.localidad === 'Toay' ? ' (Toay)' : ''}</p>
+    ${f.detalle ? `<p>${esc(f.detalle)}</p>` : ''}
+    <p>${esc(f.cuenta)}, publicado el ${fechaTxt(f.fecha)}${f.contacto && f.contacto !== '[FALTA DATO]' ? `<br>Contacto: ${esc(f.contacto)}` : ''}</p>
+    ${f.precision && f.precision !== 'exacta' ? `<p>Ubicación aproximada (${f.precision === 'esquina' ? 'por esquina' : f.precision === 'calle' ? 'sobre la calle' : 'por barrio'})</p>` : ''}
+    ${f.duplicadoDe ? `<p>Es el mismo aviso que publica otra inmobiliaria.</p>` : ''}
+    <p><a href="${esc(f.link)}" target="_blank" rel="noopener">${f.fuente === 'La Arena' ? 'Ver clasificados de La Arena' : f.origen ? `Ver perfil (salió en ${f.origen === 'historia' ? 'una historia' : 'una destacada'})` : 'Ver publicación en Instagram'}</a></p>
+  </div>`;
+}
+
+function pasa(f) {
+  const dorms = [...document.querySelectorAll('[name=dorm]:checked')].map(i => i.value);
+  const tipos = [...document.querySelectorAll('[name=tipo]:checked')].map(i => i.value);
+  const fuentes = [...document.querySelectorAll('[name=fuente]:checked')].map(i => i.value);
+  if (!dorms.includes(f.dorm ? String(f.dorm) : 'x')) return false;
+  if (!tipos.includes(f.tipo)) return false;
+  if (!fuentes.includes(f.fuente)) return false;
+  if (f.estado === 'alquilado' && !$('#verAlquilados').checked) return false;
+  if (f.localidad === 'Toay' && !$('#verToay').checked) return false;
+  const m = monto(f);
+  if (!m && !$('#verSinPrecio').checked) return false;
+  if (m && m > +$('#tope').value && +$('#tope').value < 1200000) return false;
+  return true;
+}
+
+function ordenar(a, b) {
+  const o = $('#orden').value;
+  if (o === 'fecha') return b.fecha.localeCompare(a.fecha);
+  if (o === 'metros') return (a.metros ?? 1e9) - (b.metros ?? 1e9);
+  return (monto(a) || 1e12) - (monto(b) || 1e12);
+}
+
+function claseDorm(f) { return f.estado === 'alquilado' ? 'alquilado' : f.dorm === 2 ? 'd2' : f.dorm === 1 ? 'd1' : 'dx'; }
+
+function seleccionar(id, desdeMapa) {
+  document.querySelectorAll('.fila.activa').forEach(e => e.classList.remove('activa'));
+  document.querySelectorAll('.pin.activo').forEach(e => e.classList.remove('activo'));
+  const fila = document.querySelector(`.fila[data-id="${CSS.escape(id)}"]`);
+  if (fila) { fila.classList.add('activa'); if (desdeMapa) fila.scrollIntoView({ block: 'nearest' }); }
+  const mk = marcadores[id];
+  if (mk) {
+    mk.getElement()?.querySelector('.pin')?.classList.add('activo');
+    if (!desdeMapa) mapa.setView(mk.getLatLng(), Math.max(mapa.getZoom(), 16));
+    mk.openPopup();
+  }
+}
+
+function dibujar() {
+  const tope = +$('#tope').value;
+  $('#topeTxt').textContent = tope >= 1200000 ? 'sin tope' : pesos(tope);
+  const sel = DATOS.filter(pasa).sort(ordenar);
+
+  capa.clearLayers();
+  for (const k in marcadores) delete marcadores[k];
+  for (const f of sel) {
+    if (f.lat == null || f.duplicadoDe) continue;
+    const m = monto(f);
+    const txt = f.estado === 'alquilado' ? `ALQ ${etiquetaDorm(f)}` : `${f.fuente === 'La Arena' ? 'LA ' : ''}${etiquetaDorm(f)} ${m ? corto(m) : 's/p'}`;
+    const cls = `pin ${claseDorm(f)}${f.fuente === 'La Arena' ? ' arena' : ''}${f.precision === 'barrio' ? ' aprox' : ''}`;
+    const chico = f.estado === 'alquilado' ? 'A' : f.dorm || '?';
+    const mk = L.marker([f.lat, f.lon], { icon: L.divIcon({ html: `<div class="${cls}"><span class="largo">${txt}</span><span class="corto">${chico}</span></div>`, iconSize: [0, 0] }), riseOnHover: true })
+      .bindPopup(() => popup(f), { maxWidth: 300 });
+    mk.on('click', () => seleccionar(f.id, true));
+    mk.addTo(capa);
+    marcadores[f.id] = mk;
+  }
+
+  const sinMapa = sel.filter(f => f.lat == null).length;
+  $('#resumen').textContent = `${sel.filter(f => !f.duplicadoDe).length} avisos (${sel.filter(f => f.dorm === 2 && !f.duplicadoDe).length} de 2 dormitorios, ${sel.filter(f => f.dorm === 1 && !f.duplicadoDe).length} de 1). ${sinMapa ? sinMapa + ' sin dirección quedan solo en la lista.' : ''}`;
+
+  $('#lista').innerHTML = sel.filter(f => !f.duplicadoDe).map(f => {
+    const m = monto(f);
+    const extra = f.total && f.gastos ? `alquiler ${pesos(f.precio)} + gastos ${pesos(f.gastos)}` : f.gastosSinDato ? 'más gastos sin monto publicado' : f.precio ? 'gastos sin dato' : '';
+    const dup = DATOS.filter(d => d.duplicadoDe === f.id).map(d => d.cuenta);
+    return `<div class="fila${f.estado === 'alquilado' ? ' alquilado' : ''}" data-id="${esc(f.id)}">
+      ${f.foto ? `<img src="${esc(f.foto)}" alt="" loading="lazy">` : `<div class="sinfoto">${f.fuente === 'La Arena' ? 'Aviso de diario' : 'Sin foto'}</div>`}
+      <div>
+        <div><span class="etq ${f.dorm === 2 ? 'd2' : f.dorm === 1 ? 'd1' : ''}">${f.dorm ? f.dorm + ' dorm.' : 'Dorm. s/d'}</span><span class="etq">${esc(f.tipo)}</span>${f.estado === 'alquilado' ? '<span class="etq alq">Alquilado</span>' : ''}${f.lat == null ? '<span class="etq">Sin mapa</span>' : ''}</div>
+        <div class="precio">${m ? pesos(m) : 'Sin precio'}</div>
+        ${extra ? `<div class="total">${extra}</div>` : ''}
+        <div class="dir">${esc(f.direccion || 'Sin dirección')}${f.localidad === 'Toay' ? ', Toay' : ''}</div>
+        <div class="meta">${esc(f.cuenta)}${dup.length ? ' y ' + dup.map(esc).join(', ') : ''}, ${fechaTxt(f.fecha)}${f.metros != null ? `, a ${(f.metros / 1000).toFixed(1).replace('.', ',')} km de la plaza` : ''}</div>
+      </div>
+    </div>`;
+  }).join('');
+
+  dibujarComparacion();
+}
+
+function mediana(a) { if (!a.length) return null; const s = [...a].sort((x, y) => x - y); const k = s.length >> 1; return s.length % 2 ? s[k] : (s[k - 1] + s[k]) / 2; }
+
+function dibujarComparacion() {
+  const zonas = [
+    ['Microcentro (hasta 600 m de la plaza)', f => f.localidad !== 'Toay' && f.metros <= 600],
+    ['Centro (600 m a 1,5 km)', f => f.localidad !== 'Toay' && f.metros > 600 && f.metros <= 1500],
+    ['Barrios cercanos (1,5 a 3 km)', f => f.localidad !== 'Toay' && f.metros > 1500 && f.metros <= 3000],
+    ['Barrios alejados (más de 3 km)', f => f.localidad !== 'Toay' && f.metros > 3000],
+    ['Toay', f => f.localidad === 'Toay'],
+    ['Sin ubicación', f => f.metros == null]
+  ];
+  const base = DATOS.filter(f => f.estado !== 'alquilado' && !f.duplicadoDe && monto(f));
+  const celda = (fs, d) => { const v = fs.filter(f => f.dorm === d).map(monto); return v.length ? `${pesos(mediana(v))}<br><small>${v.length} aviso${v.length > 1 ? 's' : ''}</small>` : 'sin avisos'; };
+  $('#comparar').innerHTML = `<h2>Precio mediano por zona (${$('#base').value === 'total' ? 'alquiler más gastos publicados' : 'solo alquiler'})</h2>
+    <table><thead><tr><th>Zona</th><th>1 dormitorio</th><th>2 dormitorios</th></tr></thead><tbody>
+    ${zonas.map(([n, fn]) => { const fs = base.filter(fn); return `<tr><td>${n}</td><td>${celda(fs, 1)}</td><td>${celda(fs, 2)}</td></tr>`; }).join('')}
+    <tr><td><strong>Todos</strong></td><td><strong>${celda(base, 1)}</strong></td><td><strong>${celda(base, 2)}</strong></td></tr>
+    </tbody></table>
+    <p>Cuenta solo avisos disponibles con precio y saca los repetidos entre inmobiliarias. Las zonas son distancias en línea recta desde Plaza San Martín. Cuando un aviso nombra expensas o municipales sin dar el monto, el total queda por debajo de lo real.</p>
+    <p>Los avisos ya alquilados sirven de referencia: ${DATOS.filter(f => f.estado === 'alquilado' && f.precio).map(f => `${esc(f.direccion)} (${f.dorm || '?'} dorm.) ${pesos(f.precio)}`).join('; ')}.</p>`;
+}
+
+document.querySelectorAll('.filtros input, .filtros select').forEach(e => e.addEventListener('input', dibujar));
+$('#lista').addEventListener('click', e => { const fila = e.target.closest('.fila'); if (fila) seleccionar(fila.dataset.id, false); });
+document.querySelectorAll('.vistas button').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('.vistas button').forEach(x => x.setAttribute('aria-selected', x === b));
+  $('#lista').style.display = b.dataset.vista === 'lista' ? '' : 'none';
+  $('#comparar').style.display = b.dataset.vista === 'comparar' ? 'block' : 'none';
+}));
+dibujar();
+</script>
+</body>
+</html>
