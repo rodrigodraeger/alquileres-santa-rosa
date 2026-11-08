@@ -87,11 +87,57 @@ for (const f of filas) {
   for (const k of ['sc', 'texto', 'anunciante', 'dup_sc', 'pendientes', 'video', 'barrio']) delete f[k];
 }
 
+function zona(f) {
+  if (f.localidad === 'Toay') return 'Toay';
+  if (f.metros == null) return 'Sin ubicación';
+  if (f.metros <= 600) return 'Microcentro';
+  if (f.metros <= 1500) return 'Centro';
+  return f.metros <= 3000 ? 'Barrios cercanos' : 'Barrios alejados';
+}
+
+// Lo alquilado sale del mapa y queda en alquilados.csv con la fecha en que se lo vio alquilado por primera vez.
+// Un duplicado de un aviso alquilado es la misma unidad, así que también sale.
+const alquilada = new Set(filas.filter(f => f.estado === 'alquilado').map(f => f.id));
+const disponibles = filas.filter(f => !alquilada.has(f.id) && !alquilada.has(f.duplicadoDe));
+
+const COLUMNAS = ['id', 'detectado', 'publicado', 'inmobiliaria', 'tipo', 'dormitorios', 'direccion', 'localidad', 'zona', 'metros_plaza', 'alquiler', 'gastos', 'total', 'enlace'];
+const csvPath = path.join(DIR, 'alquilados.csv');
+const celda = v => /[",\n]/.test(String(v ?? '')) ? `"${String(v).replace(/"/g, '""')}"` : String(v ?? '');
+function leerCsv(texto) {
+  const filasCsv = [];
+  let fila = [], campo = '', comillas = false;
+  for (let i = 0; i < texto.length; i++) {
+    const c = texto[i];
+    if (comillas) {
+      if (c === '"' && texto[i + 1] === '"') { campo += '"'; i++; }
+      else if (c === '"') comillas = false;
+      else campo += c;
+    } else if (c === '"') comillas = true;
+    else if (c === ',') { fila.push(campo); campo = ''; }
+    else if (c === '\n') { fila.push(campo); filasCsv.push(fila); fila = []; campo = ''; }
+    else if (c !== '\r') campo += c;
+  }
+  if (campo || fila.length) { fila.push(campo); filasCsv.push(fila); }
+  const [cab, ...resto] = filasCsv;
+  return resto.map(r => Object.fromEntries(cab.map((k, j) => [k, r[j]])));
+}
+const registro = fs.existsSync(csvPath) ? leerCsv(fs.readFileSync(csvPath, 'utf8')) : [];
+const yaRegistrados = new Set(registro.map(r => r.id));
+const nuevos = filas.filter(f => alquilada.has(f.id) && !f.duplicadoDe && !yaRegistrados.has(`${f.cuenta}/${f.id}`)).map(f => ({
+  id: `${f.cuenta}/${f.id}`, detectado: FECHA, publicado: f.fecha, inmobiliaria: f.cuenta, tipo: f.tipo, dormitorios: f.dorm ?? '',
+  direccion: f.direccion || '', localidad: f.localidad, zona: zona(f), metros_plaza: f.metros ?? '',
+  alquiler: f.precio ?? '', gastos: f.gastos || '', total: f.total ?? '', enlace: f.link
+}));
+registro.push(...nuevos);
+fs.writeFileSync(csvPath, [COLUMNAS.join(','), ...registro.map(r => COLUMNAS.map(k => celda(r[k])).join(','))].join('\n') + '\n');
+
 const html = leer('plantilla.html')
-  .replace('/*DATOS*/[]', JSON.stringify(filas))
+  .replace('/*DATOS*/[]', JSON.stringify(disponibles))
+  .replace('/*ALQUILADOS*/[]', JSON.stringify(registro))
   .replace('/*PLAZA*/{}', JSON.stringify(PLAZA))
   .replace(/__FECHA__/g, '7 de noviembre de 2026');
 fs.writeFileSync(path.join(DIR, '..', 'alquileres.html'), html);
 
-const n = filas.length, ubic = filas.filter(f => f.lat).length;
-console.log(`${n} avisos, ${ubic} en el mapa, ${n - ubic} sin ubicación, ${filas.filter(f => f.foto).length} con foto`);
+const n = disponibles.length, ubic = disponibles.filter(f => f.lat).length;
+console.log(`${n} avisos disponibles, ${ubic} en el mapa, ${n - ubic} sin ubicación, ${disponibles.filter(f => f.foto).length} con foto`);
+console.log(`${nuevos.length} alquilados nuevos en alquilados.csv (${registro.length} en total)`);

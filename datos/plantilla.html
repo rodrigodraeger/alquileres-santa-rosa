@@ -16,7 +16,6 @@
     --tenue: #46505F;      /* texto secundario */
     --azul: #0B4F9C;       /* azul cartel de calle */
     --azul-claro: #DCE7F5;
-    --gris: #7B8494;       /* alquilados */
     --linea: #C9D0DA;
     --radio: 6px;
   }
@@ -60,8 +59,6 @@
   .etq { display: inline-block; padding: 0 6px; margin-right: 4px; border: 1px solid var(--tinta); border-radius: 4px; font-size: 12px; font-weight: 700; }
   .etq.d2 { background: var(--azul); border-color: var(--azul); color: #fff; }
   .etq.d1 { color: var(--azul); border-color: var(--azul); }
-  .etq.alq { border-color: var(--gris); color: var(--gris); }
-  .fila.alquilado .precio { color: var(--gris); text-decoration: line-through; }
 
   .comparar { overflow-y: auto; flex: 1; padding: 12px 16px; display: none; }
   .comparar table { width: 100%; border-collapse: collapse; font-size: 14px; }
@@ -76,7 +73,6 @@
   .pin.d1 { background: #fff; color: var(--azul); border: 2px solid var(--azul); }
   .pin.dx { background: #fff; color: var(--tinta); border: 2px solid var(--tinta); }
   .pin.arena { border-style: dashed; }
-  .pin.alquilado { background: #fff; color: var(--gris); border: 2px solid var(--gris); }
   .pin.aprox { opacity: .8; }
   .pin.activo { outline: 3px solid var(--tinta); z-index: 1000; }
   .leaflet-div-icon { background: none; border: 0; }
@@ -128,7 +124,6 @@
         <label class="op"><input type="checkbox" name="fuente" value="La Arena" checked>Clasificados La Arena</label>
       </div>
       <div class="grupo"><span>Incluir</span>
-        <label class="op"><input type="checkbox" id="verAlquilados">Ya alquilados</label>
         <label class="op"><input type="checkbox" id="verToay" checked>Toay</label>
         <label class="op"><input type="checkbox" id="verSinPrecio" checked>Sin precio</label>
       </div>
@@ -147,10 +142,12 @@
     <div class="vistas" role="tablist">
       <button role="tab" aria-selected="true" data-vista="lista">Lista</button>
       <button role="tab" aria-selected="false" data-vista="comparar">Comparar por zona</button>
+      <button role="tab" aria-selected="false" data-vista="registro">Alquilados</button>
     </div>
     <div class="resumen" id="resumen"></div>
     <div class="lista" id="lista"></div>
     <div class="comparar" id="comparar"></div>
+    <div class="comparar" id="registro"></div>
   </section>
   <div id="mapa"></div>
 </main>
@@ -159,6 +156,7 @@
 <script>
 const DATOS = /*DATOS*/[];
 const PLAZA = /*PLAZA*/{};
+const ALQUILADOS = /*ALQUILADOS*/[];
 
 const $ = s => document.querySelector(s);
 const pesos = n => '$' + Math.round(n).toLocaleString('es-AR');
@@ -183,8 +181,7 @@ leyenda.onAdd = () => {
   const d = L.DomUtil.create('div', 'leyenda');
   d.innerHTML = `<div><span class="pin d2">2D</span>2 dormitorios</div>
     <div><span class="pin d1">1D</span>1 dormitorio</div>
-    <div><span class="pin d1 arena">LA</span>borde punteado: La Arena</div>
-    <div><span class="pin alquilado">ALQ</span>ya alquilado</div>`;
+    <div><span class="pin d1 arena">LA</span>borde punteado: La Arena</div>`;
   return d;
 };
 leyenda.addTo(mapa);
@@ -198,7 +195,7 @@ function popup(f) {
   const m = monto(f);
   return `<div class="pop">
     ${f.foto ? `<img src="${esc(f.foto)}" alt="">` : ''}
-    <h3>${f.precio ? pesos(f.precio) : 'Sin precio publicado'}${f.estado === 'alquilado' ? ' (ya alquilado)' : ''}</h3>
+    <h3>${f.precio ? pesos(f.precio) : 'Sin precio publicado'}</h3>
     ${f.precio_nota ? `<p>${esc(f.precio_nota)}</p>` : ''}
     ${f.total && f.gastos ? `<p><strong>Total aprox.: ${pesos(f.total)}</strong></p>` : ''}
     <p>${f.dorm ? f.dorm + ' dormitorio' + (f.dorm > 1 ? 's' : '') : 'Dormitorios sin dato'}, ${esc(f.tipo)}</p>
@@ -218,7 +215,6 @@ function pasa(f) {
   if (!dorms.includes(f.dorm ? String(f.dorm) : 'x')) return false;
   if (!tipos.includes(f.tipo)) return false;
   if (!fuentes.includes(f.fuente)) return false;
-  if (f.estado === 'alquilado' && !$('#verAlquilados').checked) return false;
   if (f.localidad === 'Toay' && !$('#verToay').checked) return false;
   const m = monto(f);
   if (!m && !$('#verSinPrecio').checked) return false;
@@ -233,7 +229,7 @@ function ordenar(a, b) {
   return (monto(a) || 1e12) - (monto(b) || 1e12);
 }
 
-function claseDorm(f) { return f.estado === 'alquilado' ? 'alquilado' : f.dorm === 2 ? 'd2' : f.dorm === 1 ? 'd1' : 'dx'; }
+function claseDorm(f) { return f.dorm === 2 ? 'd2' : f.dorm === 1 ? 'd1' : 'dx'; }
 
 function seleccionar(id, desdeMapa) {
   document.querySelectorAll('.fila.activa').forEach(e => e.classList.remove('activa'));
@@ -258,9 +254,9 @@ function dibujar() {
   for (const f of sel) {
     if (f.lat == null || f.duplicadoDe) continue;
     const m = monto(f);
-    const txt = f.estado === 'alquilado' ? `ALQ ${etiquetaDorm(f)}` : `${f.fuente === 'La Arena' ? 'LA ' : ''}${etiquetaDorm(f)} ${m ? corto(m) : 's/p'}`;
+    const txt = `${f.fuente === 'La Arena' ? 'LA ' : ''}${etiquetaDorm(f)} ${m ? corto(m) : 's/p'}`;
     const cls = `pin ${claseDorm(f)}${f.fuente === 'La Arena' ? ' arena' : ''}${f.precision === 'barrio' ? ' aprox' : ''}`;
-    const chico = f.estado === 'alquilado' ? 'A' : f.dorm || '?';
+    const chico = f.dorm || '?';
     const mk = L.marker([f.lat, f.lon], { icon: L.divIcon({ html: `<div class="${cls}"><span class="largo">${txt}</span><span class="corto">${chico}</span></div>`, iconSize: [0, 0] }), riseOnHover: true })
       .bindPopup(() => popup(f), { maxWidth: 300 });
     mk.on('click', () => seleccionar(f.id, true));
@@ -275,10 +271,10 @@ function dibujar() {
     const m = monto(f);
     const extra = f.total && f.gastos ? `alquiler ${pesos(f.precio)} + gastos ${pesos(f.gastos)}` : f.gastosSinDato ? 'más gastos sin monto publicado' : f.precio ? 'gastos sin dato' : '';
     const dup = DATOS.filter(d => d.duplicadoDe === f.id).map(d => d.cuenta);
-    return `<div class="fila${f.estado === 'alquilado' ? ' alquilado' : ''}" data-id="${esc(f.id)}">
+    return `<div class="fila" data-id="${esc(f.id)}">
       ${f.foto ? `<img src="${esc(f.foto)}" alt="" loading="lazy">` : `<div class="sinfoto">${f.fuente === 'La Arena' ? 'Aviso de diario' : 'Sin foto'}</div>`}
       <div>
-        <div><span class="etq ${f.dorm === 2 ? 'd2' : f.dorm === 1 ? 'd1' : ''}">${f.dorm ? f.dorm + ' dorm.' : 'Dorm. s/d'}</span><span class="etq">${esc(f.tipo)}</span>${f.estado === 'alquilado' ? '<span class="etq alq">Alquilado</span>' : ''}${f.lat == null ? '<span class="etq">Sin mapa</span>' : ''}</div>
+        <div><span class="etq ${f.dorm === 2 ? 'd2' : f.dorm === 1 ? 'd1' : ''}">${f.dorm ? f.dorm + ' dorm.' : 'Dorm. s/d'}</span><span class="etq">${esc(f.tipo)}</span>${f.lat == null ? '<span class="etq">Sin mapa</span>' : ''}</div>
         <div class="precio">${m ? pesos(m) : 'Sin precio'}</div>
         ${extra ? `<div class="total">${extra}</div>` : ''}
         <div class="dir">${esc(f.direccion || 'Sin dirección')}${f.localidad === 'Toay' ? ', Toay' : ''}</div>
@@ -301,15 +297,24 @@ function dibujarComparacion() {
     ['Toay', f => f.localidad === 'Toay'],
     ['Sin ubicación', f => f.metros == null]
   ];
-  const base = DATOS.filter(f => f.estado !== 'alquilado' && !f.duplicadoDe && monto(f));
+  const base = DATOS.filter(f => !f.duplicadoDe && monto(f));
   const celda = (fs, d) => { const v = fs.filter(f => f.dorm === d).map(monto); return v.length ? `${pesos(mediana(v))}<br><small>${v.length} aviso${v.length > 1 ? 's' : ''}</small>` : 'sin avisos'; };
   $('#comparar').innerHTML = `<h2>Precio mediano por zona (${$('#base').value === 'total' ? 'alquiler más gastos publicados' : 'solo alquiler'})</h2>
     <table><thead><tr><th>Zona</th><th>1 dormitorio</th><th>2 dormitorios</th></tr></thead><tbody>
     ${zonas.map(([n, fn]) => { const fs = base.filter(fn); return `<tr><td>${n}</td><td>${celda(fs, 1)}</td><td>${celda(fs, 2)}</td></tr>`; }).join('')}
     <tr><td><strong>Todos</strong></td><td><strong>${celda(base, 1)}</strong></td><td><strong>${celda(base, 2)}</strong></td></tr>
     </tbody></table>
-    <p>Cuenta solo avisos disponibles con precio y saca los repetidos entre inmobiliarias. Las zonas son distancias en línea recta desde Plaza San Martín. Cuando un aviso nombra expensas o municipales sin dar el monto, el total queda por debajo de lo real.</p>
-    <p>Los avisos ya alquilados sirven de referencia: ${DATOS.filter(f => f.estado === 'alquilado' && f.precio).map(f => `${esc(f.direccion)} (${f.dorm || '?'} dorm.) ${pesos(f.precio)}`).join('; ')}.</p>`;
+    <p>Cuenta solo avisos disponibles con precio y saca los repetidos entre inmobiliarias. Las zonas son distancias en línea recta desde Plaza San Martín. Cuando un aviso nombra expensas o municipales sin dar el monto, el total queda por debajo de lo real.</p>`;
+}
+
+function dibujarRegistro() {
+  const num = v => v === '' || v == null ? null : +v;
+  const filas = [...ALQUILADOS].sort((a, b) => b.detectado.localeCompare(a.detectado));
+  $('#registro').innerHTML = `<h2>Alquilados registrados (${filas.length})</h2>
+    <p>Cada vez que una inmobiliaria marca un aviso como alquilado, sale del mapa y queda acá con la fecha en que se lo vio alquilado. "Visto alquilado" es la fecha del relevamiento, no la del contrato.</p>
+    <table><thead><tr><th>Visto alquilado</th><th>Zona</th><th>Dorm.</th><th>Alquiler</th><th>Con gastos</th><th>Dirección</th></tr></thead><tbody>
+    ${filas.map(r => `<tr><td>${fechaTxt(r.detectado)}</td><td>${esc(r.zona)}</td><td>${esc(r.dormitorios || '?')}</td><td>${num(r.alquiler) ? pesos(num(r.alquiler)) : 'sin precio'}</td><td>${num(r.gastos) ? pesos(num(r.total)) : ''}</td><td><a href="${esc(r.enlace)}" target="_blank" rel="noopener">${esc(r.direccion || 'sin dirección')}</a><br><small>${esc(r.inmobiliaria)}, ${esc(r.tipo)}</small></td></tr>`).join('')}
+    </tbody></table>`;
 }
 
 document.querySelectorAll('.filtros input, .filtros select').forEach(e => e.addEventListener('input', dibujar));
@@ -318,8 +323,10 @@ document.querySelectorAll('.vistas button').forEach(b => b.addEventListener('cli
   document.querySelectorAll('.vistas button').forEach(x => x.setAttribute('aria-selected', x === b));
   $('#lista').style.display = b.dataset.vista === 'lista' ? '' : 'none';
   $('#comparar').style.display = b.dataset.vista === 'comparar' ? 'block' : 'none';
+  $('#registro').style.display = b.dataset.vista === 'registro' ? 'block' : 'none';
 }));
 dibujar();
+dibujarRegistro();
 </script>
 </body>
 </html>
