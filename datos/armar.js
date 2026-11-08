@@ -30,7 +30,8 @@ function gastos(nota) {
   while ((m = re.exec(nota))) {
     const antes = nota.slice(Math.max(0, m.index - 30), m.index).toLowerCase();
     const despues = nota.slice(m.index, m.index + 25).toLowerCase();
-    if (/desde|con cochera|total|^\s*$/.test(antes) && !/expensa|municipal|tasa|impuest/.test(antes)) continue;
+    if (/(desde|con cochera|total|estimado):?\s*$/.test(antes)) continue;
+    if (/^\s*$/.test(antes)) continue;
     if (/cochera\)/.test(despues)) continue;
     let v = +m[1].replace(/\./g, '');
     if (v < 1000) v *= 1000; // "$35 / 000" quedó cortado en el texto original
