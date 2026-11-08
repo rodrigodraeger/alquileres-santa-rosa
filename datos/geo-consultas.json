@@ -281,9 +281,6 @@
  "DdrsYXmjaJ5": {
   "a": "Edison 1056"
  },
- "DfP1P2sGtgZ": {
-  "a": "Carriego 1766"
- },
  "DeuDQ-PoJWj": {
   "a": "Santiago del Estero 675"
  },
@@ -344,12 +341,6 @@
  "DewzzXijqxY-2": {
   "a": "Santa Cruz 85"
  },
- "De2VPuSGJrS": {
-  "a": "O'Higgins 156"
- },
- "De2VPuSGJrS-2": {
-  "a": "Guevara 1180"
- },
  "DeJ29x9FY7G": {
   "p": "Barrio Jardín, Santa Rosa"
  },
@@ -370,57 +361,6 @@
  },
  "DdUvCi4lmll": {
   "a": "Bolivia 1455"
- },
- "la0": {
-  "a": "Don Bosco 330"
- },
- "la2": {
-  "x": [
-   "Vélez Sársfield",
-   "Alberdi"
-  ]
- },
- "la4": {
-  "a": "Avenida Luro 1600"
- },
- "la6": {
-  "x": [
-   "Juan XXIII",
-   "Pasteur"
-  ]
- },
- "la7": {
-  "a": "Cervantes 545"
- },
- "la10": {
-  "a": "Alem 555"
- },
- "la11": {
-  "x": [
-   "Centeno",
-   "San Martín"
-  ]
- },
- "la12": {
-  "x": [
-   "Perón",
-   "General Acha"
-  ]
- },
- "la13": {
-  "p": "Plan Vial, Santa Rosa"
- },
- "la14": {
-  "p": "Médanos Verdes, Santa Rosa"
- },
- "la15": {
-  "x": [
-   "Quintana",
-   "Ayala"
-  ]
- },
- "la16": {
-  "p": "Barrio Empleados de Comercio, Santa Rosa"
  },
  "hist-bonjour-1": {
   "a": "Córdoba 256"
@@ -474,6 +414,195 @@
   "x": [
    "1 de Mayo",
    "Almirante Brown"
+  ]
+ },
+ "DfVL5wFmr7g": {
+  "a": "Carriego 1766"
+ },
+ "DfXz3DymNvu": {
+  "a": "O'Higgins 156"
+ },
+ "DfXz3DymNvu-2": {
+  "a": "Guevara 1180"
+ },
+ "DfUrC6WIDUO": {
+  "a": "Edison 843"
+ },
+ "DeuIVXIoBw6": {
+  "a": "Coronel Gil 287"
+ },
+ "DfR_PfJFjr9": {
+  "a": "Neuquén 846"
+ },
+ "DfXzRMZCQIH": {
+  "a": "Pío XII 759"
+ },
+ "DfdfYoFFIym": {
+  "p": "Arcos del Sur, Santa Rosa"
+ },
+ "DeHMse9Mxjr": {
+  "p": "Toay"
+ },
+ "DfXWMacFBHB": {
+  "x": [
+   "Unanue",
+   "Butaló"
+  ]
+ },
+ "DfcZuv5IFI_": {
+  "a": "Médici 195"
+ },
+ "DfcaVqtlSdY": {
+  "a": "Rivadavia 335"
+ },
+ "DfaCdxVFYtR": {
+  "a": "Raúl B. Díaz 1750"
+ },
+ "DfZ81IfEcb_": {
+  "x": [
+   "Wilde",
+   "Pío XII"
+  ]
+ },
+ "DfUipCRlZka": {
+  "a": "Catamarca 655"
+ },
+ "DfZokN8FhhU": {
+  "a": "Entre Ríos 456"
+ },
+ "DehaSE7lrhc": {
+  "a": "Don Bosco 410"
+ },
+ "DfZ_JVjoPaI": {
+  "a": "Neuquén 271"
+ },
+ "DfSWbGmlEIs": {
+  "p": "Plan Vial, Santa Rosa"
+ },
+ "DfSP1CFFFRu": {
+  "x": [
+   "Ameghino",
+   "España"
+  ]
+ },
+ "DfIG7RzI3A0": {
+  "a": "Alberdi 644"
+ },
+ "DfC82N_I9rj": {
+  "a": "Bolivia 1435"
+ },
+ "DfC6TBvFC7o": {
+  "a": "Giachino 2455"
+ },
+ "De9rPZJlMmH": {
+  "a": "Victoria 547"
+ },
+ "De2bhJVI9ZG": {
+  "a": "Neuquén 322"
+ },
+ "De2ZxeuI2WG": {
+  "a": "Roque Sáenz Peña 806"
+ },
+ "DezYCOcFO5C": {
+  "x": [
+   "Kardec",
+   "Martínez"
+  ]
+ },
+ "Dej1C44lAwy": {
+  "a": "Coronel Gil 520"
+ },
+ "DejxzjhlI23": {
+  "a": "Juncal 996"
+ },
+ "DehcXqVFM8V": {
+  "a": "Berutti 361"
+ },
+ "Dee5b6flPHA": {
+  "a": "Santiago Álvarez 2295"
+ },
+ "DfXVRcSlKgY": {
+  "x": [
+   "Coronel Gil",
+   "Alvear"
+  ]
+ },
+ "DfSg7M4FI_B": {
+  "x": [
+   "Wilde",
+   "Edison"
+  ]
+ },
+ "DfX11iKljru": {
+  "a": "Emilio Zola 328"
+ },
+ "DfXrc7Bm-VE": {
+  "a": "Juan B. Justo 208"
+ },
+ "DfTA2Z2DQaL": {
+  "a": "Comisario Valerga 567"
+ },
+ "DfSlYJOlpFJ": {
+  "p": "Plan Vial, Santa Rosa"
+ },
+ "DfA7yeCnze9": {
+  "a": "25 de Mayo 65"
+ },
+ "De9BOJbDNFH": {
+  "a": "Garay Vivas 1136"
+ },
+ "Dd7PyZGlJ90": {
+  "x": [
+   "San Martín",
+   "Oliver"
+  ]
+ },
+ "la1": {
+  "x": [
+   "Padre Buodo",
+   "Belgrano"
+  ]
+ },
+ "la2": {
+  "a": "Avenida Luro 1600"
+ },
+ "la3": {
+  "x": [
+   "Juan XXIII",
+   "Pasteur"
+  ]
+ },
+ "la5": {
+  "a": "Cervantes 545"
+ },
+ "la8": {
+  "x": [
+   "Schmidt",
+   "Ávila"
+  ]
+ },
+ "la9": {
+  "a": "José Ingenieros 1248"
+ },
+ "la10": {
+  "x": [
+   "Centeno",
+   "San Martín"
+  ]
+ },
+ "la11": {
+  "p": "Plan Vial, Santa Rosa"
+ },
+ "la12": {
+  "x": [
+   "Perón",
+   "General Acha"
+  ]
+ },
+ "la13": {
+  "x": [
+   "Quintana",
+   "Ayala"
   ]
  }
 }

@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const DIR = __dirname;
-const FECHA = '2026-11-02';
+const FECHA = '2026-11-07';
 const PLAZA = { lat: -36.62030, lon: -64.29060 }; // Plaza San Martín
 
 const leer = f => fs.readFileSync(path.join(DIR, f), 'utf8');
@@ -12,7 +12,7 @@ const cache = JSON.parse(leer('geo-cache.json'));
 const fotos = new Set(fs.readdirSync(path.join(DIR, '..', 'fotos')));
 
 // Avisos repetidos entre inmobiliarias: el segundo se marca como duplicado del primero
-const DUPLICADOS = { 'DfDbmH-lhLY': 'DfAhthxltb6', 'DeeZWA9ESZS': 'DebzFlGEfbd', 'la0': 'DeupE7oEeJn', 'DdTnbGAmwSS': 'dest-trenel-1-3' };
+const DUPLICADOS = { 'DfDbmH-lhLY': 'DfAhthxltb6', 'DeeZWA9ESZS': 'DebzFlGEfbd', 'DdTnbGAmwSS': 'dest-trenel-1-3' };
 
 const B64 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_';
 function fechaDeCodigo(sc) {
@@ -49,7 +49,7 @@ function distancia(a, b) {
 
 const filas = [];
 const vistos = {};
-for (const l of leer('ig-2026-11-02.jsonl').split('\n').filter(x => x.trim())) {
+for (const l of leer('ig-2026-11-07.jsonl').split('\n').filter(x => x.trim())) {
   const r = JSON.parse(l);
   if (r.excluir || r.tipo === 'revisar' || r.tipo === 'video') continue;
   let id = r.sc;
@@ -59,7 +59,7 @@ for (const l of leer('ig-2026-11-02.jsonl').split('\n').filter(x => x.trim())) {
   filas.push({ ...r, id, fuente: 'Instagram', fecha: r.fecha || fechaDeCodigo(r.sc),
     link: esPosteo ? `https://www.instagram.com/p/${r.sc}/` : `https://www.instagram.com/${r.cuenta}/`, foto: fotos.has(`alq_${r.cuenta}_${r.sc}.jpg`) ? `fotos/alq_${r.cuenta}_${r.sc}.jpg` : null });
 }
-JSON.parse(leer('laarena-2026-11-02.json')).forEach((r, i) => {
+JSON.parse(leer('laarena-2026-11-07.json')).forEach((r, i) => {
   filas.push({ ...r, id: 'la' + i, cuenta: r.anunciante, fuente: 'La Arena', fecha: FECHA, estado: 'disponible',
     detalle: r.texto, link: 'https://www.laarena.com.ar/clasificados', foto: null });
 });
@@ -90,7 +90,7 @@ for (const f of filas) {
 const html = leer('plantilla.html')
   .replace('/*DATOS*/[]', JSON.stringify(filas))
   .replace('/*PLAZA*/{}', JSON.stringify(PLAZA))
-  .replace(/__FECHA__/g, '2 de noviembre de 2026');
+  .replace(/__FECHA__/g, '7 de noviembre de 2026');
 fs.writeFileSync(path.join(DIR, '..', 'alquileres.html'), html);
 
 const n = filas.length, ubic = filas.filter(f => f.lat).length;
