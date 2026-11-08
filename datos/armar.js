@@ -12,7 +12,7 @@ const cache = JSON.parse(leer('geo-cache.json'));
 const fotos = new Set(fs.readdirSync(path.join(DIR, '..', 'fotos')));
 
 // Avisos repetidos entre inmobiliarias: el segundo se marca como duplicado del primero
-const DUPLICADOS = { 'DfDbmH-lhLY': 'DfAhthxltb6', 'DeeZWA9ESZS': 'DebzFlGEfbd', 'DdTnbGAmwSS': 'dest-trenel-1-3' };
+const DUPLICADOS = { 'DfDbmH-lhLY': 'DfAhthxltb6', 'DeeZWA9ESZS': 'DebzFlGEfbd', 'DdTnbGAmwSS': 'dest-trenel-1-3', 'DfUuqGTFeML': 'DfAhthxltb6', 'DerhiWcFi1R': 'DezYCOcFO5C' };
 
 const B64 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_';
 function fechaDeCodigo(sc) {

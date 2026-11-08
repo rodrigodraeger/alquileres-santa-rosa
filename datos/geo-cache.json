@@ -988,5 +988,96 @@
   "tipo": "place",
   "nombre": "1248, José Ingenieros, Villa Santillán, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
   "precision": "exacta"
+ },
+ "{\"a\":\"Emilio Zola 1658\"}": {
+  "lat": -36.6407508,
+  "lon": -64.2935993,
+  "tipo": "place",
+  "nombre": "1658, Emilio Zola, 26 de Septiembre, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Cerro Negro 780\"}": {
+  "lat": -36.6328319,
+  "lon": -64.2975809,
+  "tipo": "residential",
+  "nombre": "Cerro Negro, Villa Santillán Oeste, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "calle"
+ },
+ "{\"a\":\"Centeno 395\"}": {
+  "lat": -36.6207674,
+  "lon": -64.2989364,
+  "tipo": "place",
+  "nombre": "395, Centeno, Centro, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Rivadavia 555\"}": {
+  "lat": -36.6225947,
+  "lon": -64.2872807,
+  "tipo": "place",
+  "nombre": "555, Rivadavia, Centro, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"x\":[\"Pampa\",\"San Jorge\"]}": {
+  "lat": -36.6145946,
+  "lon": -64.2786326,
+  "tipo": "esquina",
+  "nombre": "Pampa y San Jorge",
+  "precision": "esquina"
+ },
+ "{\"a\":\"Lavalle 744\"}": {
+  "lat": -36.624624,
+  "lon": -64.3041661,
+  "tipo": "residential",
+  "nombre": "Lavalle, Centro, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "calle"
+ },
+ "{\"a\":\"Delfín Gallo 836\"}": {
+  "lat": -36.6287618,
+  "lon": -64.2912059,
+  "tipo": "place",
+  "nombre": "836, Delfín Gallo, Villa Santillán, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"San Juan 550, Toay\"}": {
+  "lat": -36.6709452,
+  "lon": -64.3695207,
+  "tipo": "place",
+  "nombre": "550, San Juan, Mattiauda, Aguas Buenas, Toay, Municipio de Toay, Departamento Toay, La Pampa, L6303, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Houssay 1776\"}": {
+  "lat": -36.6381319,
+  "lon": -64.2988864,
+  "tipo": "place",
+  "nombre": "1776, Bernardo Houssay, 26 de Septiembre, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"César Rodríguez 1311\"}": {
+  "lat": -36.6429485,
+  "lon": -64.2850939,
+  "tipo": "place",
+  "nombre": "1311, César Rodríguez, Pampa, Fonavi & Pampa, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Garibaldi 267\"}": {
+  "lat": -36.6194791,
+  "lon": -64.2846656,
+  "tipo": "place",
+  "nombre": "267, Garibaldi, Centro, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Tomás Mason 148\"}": {
+  "lat": -36.6151389,
+  "lon": -64.2846072,
+  "tipo": "place",
+  "nombre": "148, Tomás Mason, Villa del Busto, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Avenida Luro 15\"}": {
+  "lat": -36.6169637,
+  "lon": -64.2812123,
+  "tipo": "place",
+  "nombre": "15, Avenida Pedro Luro, Villa Alonso, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
  }
 }
