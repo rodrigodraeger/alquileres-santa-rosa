@@ -96,12 +96,12 @@ function zona(f) {
   return f.metros <= 3000 ? 'Barrios cercanos' : 'Barrios alejados';
 }
 
-// Lo alquilado sale del mapa y queda en alquilados.csv con la fecha en que se lo vio alquilado por primera vez.
-// Un duplicado de un aviso alquilado es la misma unidad, así que también sale.
-const alquilada = new Set(filas.filter(f => f.estado === 'alquilado').map(f => f.id));
-const disponibles = filas.filter(f => !alquilada.has(f.id) && !alquilada.has(f.duplicadoDe));
+// Lo alquilado o reservado sale del mapa y queda en alquilados.csv con la fecha en que se lo vio así por primera vez.
+// Un duplicado de un aviso que salió es la misma unidad, así que también sale.
+const fuera = new Set(filas.filter(f => f.estado === 'alquilado' || f.estado === 'reservado').map(f => f.id));
+const disponibles = filas.filter(f => !fuera.has(f.id) && !fuera.has(f.duplicadoDe));
 
-const COLUMNAS = ['id', 'detectado', 'publicado', 'inmobiliaria', 'tipo', 'dormitorios', 'direccion', 'localidad', 'zona', 'metros_plaza', 'alquiler', 'gastos', 'total', 'enlace'];
+const COLUMNAS = ['id', 'estado', 'detectado', 'publicado', 'inmobiliaria', 'tipo', 'dormitorios', 'direccion', 'localidad', 'zona', 'metros_plaza', 'alquiler', 'gastos', 'total', 'enlace'];
 const csvPath = path.join(DIR, 'alquilados.csv');
 const celda = v => /[",\n]/.test(String(v ?? '')) ? `"${String(v).replace(/"/g, '""')}"` : String(v ?? '');
 function leerCsv(texto) {
@@ -122,10 +122,17 @@ function leerCsv(texto) {
   const [cab, ...resto] = filasCsv;
   return resto.map(r => Object.fromEntries(cab.map((k, j) => [k, r[j]])));
 }
-const registro = fs.existsSync(csvPath) ? leerCsv(fs.readFileSync(csvPath, 'utf8')) : [];
+const leido = fs.existsSync(csvPath) ? leerCsv(fs.readFileSync(csvPath, 'utf8')) : [];
+for (const r of leido) r.estado = r.estado || 'alquilado';
+const porClave = new Map(filas.filter(f => !f.duplicadoDe).map(f => [`${f.cuenta}/${f.id}`, f]));
+// Una reserva que se cayó (el aviso volvió a disponible) sale del registro; una reserva que pasó a alquilado se actualiza
+const caidas = leido.filter(r => r.estado === 'reservado' && porClave.get(r.id)?.estado === 'disponible');
+const registro = leido.filter(r => !caidas.includes(r));
+const confirmadas = registro.filter(r => r.estado === 'reservado' && porClave.get(r.id)?.estado === 'alquilado');
+for (const r of confirmadas) { r.estado = 'alquilado'; r.detectado = FECHA; }
 const yaRegistrados = new Set(registro.map(r => r.id));
-const nuevos = filas.filter(f => alquilada.has(f.id) && !f.duplicadoDe && !yaRegistrados.has(`${f.cuenta}/${f.id}`)).map(f => ({
-  id: `${f.cuenta}/${f.id}`, detectado: FECHA, publicado: f.fecha, inmobiliaria: f.cuenta, tipo: f.tipo, dormitorios: f.dorm ?? '',
+const nuevos = filas.filter(f => fuera.has(f.id) && !f.duplicadoDe && !yaRegistrados.has(`${f.cuenta}/${f.id}`)).map(f => ({
+  id: `${f.cuenta}/${f.id}`, estado: f.estado, detectado: FECHA, publicado: f.fecha, inmobiliaria: f.cuenta, tipo: f.tipo, dormitorios: f.dorm ?? '',
   direccion: f.direccion || '', localidad: f.localidad, zona: zona(f), metros_plaza: f.metros ?? '',
   alquiler: f.precio ?? '', gastos: f.gastos || '', total: f.total ?? '', enlace: f.link
 }));
@@ -141,4 +148,7 @@ fs.writeFileSync(path.join(DIR, '..', 'alquileres.html'), html);
 
 const n = disponibles.length, ubic = disponibles.filter(f => f.lat).length;
 console.log(`${n} avisos disponibles, ${ubic} en el mapa, ${n - ubic} sin ubicación, ${disponibles.filter(f => f.foto).length} con foto`);
-console.log(`${nuevos.length} alquilados nuevos en alquilados.csv (${registro.length} en total)`);
+for (const r of nuevos) console.log(`nuevo ${r.estado}: ${r.direccion || 'sin dirección'} (${r.inmobiliaria}), ${r.zona}, ${r.alquiler || 'sin precio'}`);
+for (const r of confirmadas) console.log(`reservado que pasó a alquilado: ${r.direccion} (${r.inmobiliaria})`);
+for (const r of caidas) console.log(`reserva caída, vuelve al mapa: ${r.direccion} (${r.inmobiliaria})`);
+console.log(`alquilados.csv: ${registro.filter(r => r.estado === 'alquilado').length} alquilados y ${registro.filter(r => r.estado === 'reservado').length} reservados`);

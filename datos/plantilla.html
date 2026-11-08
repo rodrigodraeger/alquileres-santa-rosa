@@ -142,7 +142,7 @@
     <div class="vistas" role="tablist">
       <button role="tab" aria-selected="true" data-vista="lista">Lista</button>
       <button role="tab" aria-selected="false" data-vista="comparar">Comparar por zona</button>
-      <button role="tab" aria-selected="false" data-vista="registro">Alquilados</button>
+      <button role="tab" aria-selected="false" data-vista="registro">Alquilados y reservados</button>
     </div>
     <div class="resumen" id="resumen"></div>
     <div class="lista" id="lista"></div>
@@ -310,10 +310,11 @@ function dibujarComparacion() {
 function dibujarRegistro() {
   const num = v => v === '' || v == null ? null : +v;
   const filas = [...ALQUILADOS].sort((a, b) => b.detectado.localeCompare(a.detectado));
-  $('#registro').innerHTML = `<h2>Alquilados registrados (${filas.length})</h2>
-    <p>Cada vez que una inmobiliaria marca un aviso como alquilado, sale del mapa y queda acá con la fecha en que se lo vio alquilado. "Visto alquilado" es la fecha del relevamiento, no la del contrato.</p>
-    <table><thead><tr><th>Visto alquilado</th><th>Zona</th><th>Dorm.</th><th>Alquiler</th><th>Con gastos</th><th>Dirección</th></tr></thead><tbody>
-    ${filas.map(r => `<tr><td>${fechaTxt(r.detectado)}</td><td>${esc(r.zona)}</td><td>${esc(r.dormitorios || '?')}</td><td>${num(r.alquiler) ? pesos(num(r.alquiler)) : 'sin precio'}</td><td>${num(r.gastos) ? pesos(num(r.total)) : ''}</td><td><a href="${esc(r.enlace)}" target="_blank" rel="noopener">${esc(r.direccion || 'sin dirección')}</a><br><small>${esc(r.inmobiliaria)}, ${esc(r.tipo)}</small></td></tr>`).join('')}
+  const reservados = filas.filter(r => r.estado === 'reservado').length;
+  $('#registro').innerHTML = `<h2>Alquilados y reservados (${filas.length - reservados} alquilados, ${reservados} reservados)</h2>
+    <p>Cuando una inmobiliaria marca un aviso como alquilado o reservado (en el posteo, en un comentario o en una historia), sale del mapa y queda acá con la fecha del relevamiento en que se lo vio así, no la del contrato. Si una reserva se cae y el aviso vuelve a estar disponible, regresa al mapa.</p>
+    <table><thead><tr><th>Estado</th><th>Visto</th><th>Zona</th><th>Dorm.</th><th>Alquiler</th><th>Con gastos</th><th>Dirección</th></tr></thead><tbody>
+    ${filas.map(r => `<tr><td>${r.estado === 'reservado' ? 'Reservado' : 'Alquilado'}</td><td>${fechaTxt(r.detectado)}</td><td>${esc(r.zona)}</td><td>${esc(r.dormitorios || '?')}</td><td>${num(r.alquiler) ? pesos(num(r.alquiler)) : 'sin precio'}</td><td>${num(r.gastos) ? pesos(num(r.total)) : ''}</td><td><a href="${esc(r.enlace)}" target="_blank" rel="noopener">${esc(r.direccion || 'sin dirección')}</a><br><small>${esc(r.inmobiliaria)}, ${esc(r.tipo)}</small></td></tr>`).join('')}
     </tbody></table>`;
 }
 
