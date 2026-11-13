@@ -557,54 +557,6 @@
    "Oliver"
   ]
  },
- "la1": {
-  "x": [
-   "Padre Buodo",
-   "Belgrano"
-  ]
- },
- "la2": {
-  "a": "Avenida Luro 1600"
- },
- "la3": {
-  "x": [
-   "Juan XXIII",
-   "Pasteur"
-  ]
- },
- "la5": {
-  "a": "Cervantes 545"
- },
- "la8": {
-  "x": [
-   "Schmidt",
-   "Ávila"
-  ]
- },
- "la9": {
-  "a": "José Ingenieros 1248"
- },
- "la10": {
-  "x": [
-   "Centeno",
-   "San Martín"
-  ]
- },
- "la11": {
-  "p": "Plan Vial, Santa Rosa"
- },
- "la12": {
-  "x": [
-   "Perón",
-   "General Acha"
-  ]
- },
- "la13": {
-  "x": [
-   "Quintana",
-   "Ayala"
-  ]
- },
  "DfPXyawGx2q": {
   "a": "Emilio Zola 1658"
  },
@@ -664,5 +616,98 @@
  },
  "DdolTFIleFc": {
   "a": "Avenida Luro 15"
+ },
+ "DfpU_GTCa6K": {
+  "a": "Delfín Gallo 1451"
+ },
+ "Dfm-aZsFo_Q": {
+  "a": "Pellegrini 554"
+ },
+ "DfkSekOFhPj": {
+  "a": "9 de Julio 265"
+ },
+ "DfnOlMwi9dM": {
+  "a": "9 de Julio 265"
+ },
+ "Dfdu58ZEVVT": {
+  "x": [
+   "Andrada",
+   "Luro"
+  ]
+ },
+ "Dfj4p0zIYCb": {
+  "a": "Alem 555"
+ },
+ "DfpsjdqGAfo": {
+  "p": "Plan Vial, Santa Rosa"
+ },
+ "DfnJwZbmAQi": {
+  "a": "Avenida Uruguay 12"
+ },
+ "Dfnt-oKmhRc": {
+  "x": [
+   "Ferro",
+   "Mendoza"
+  ]
+ },
+ "DfpahmaRb0O": {
+  "a": "Alem 354"
+ },
+ "DfmmRSpxeV3": {
+  "a": "Edison 951"
+ },
+ "DfpiXyKIxW4": {
+  "a": "Márquez 1516"
+ },
+ "DfpePq9lO7a": {
+  "x": [
+   "González",
+   "Lordi"
+  ]
+ },
+ "DfmUAy5pTq3": {
+  "x": [
+   "González",
+   "Uruguay"
+  ]
+ },
+ "DfmwL0UITgl": {
+  "a": "25 de Mayo, Toay"
+ },
+ "DfWAlqVoWf0": {
+  "a": "Independencia, Toay"
+ },
+ "DfOWp2SkW90": {
+  "a": "Independencia, Toay"
+ },
+ "DeVtojKkY5E": {
+  "a": "España 1665, Toay"
+ },
+ "DeM_yZ4mOLL": {
+  "a": "Independencia, Toay"
+ },
+ "dest-fernandez-1113-1": {
+  "p": "Plan Vial, Santa Rosa"
+ },
+ "la1": {
+  "x": [
+   "Padre Buodo",
+   "Belgrano"
+  ]
+ },
+ "la2": {
+  "a": "Avenida Luro 1600"
+ },
+ "la7": {
+  "a": "José Ingenieros 1248"
+ },
+ "la8": {
+  "a": "Alem 555"
+ },
+ "la9": {
+  "p": "Plan Vial, Santa Rosa"
+ },
+ "la16": {
+  "a": "Pasteur 1000"
  }
 }

@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const DIR = __dirname;
-const FECHA = '2026-11-07';
+const FECHA = '2026-11-13';
 const PLAZA = { lat: -36.62030, lon: -64.29060 }; // Plaza San Martín
 
 const leer = f => fs.readFileSync(path.join(DIR, f), 'utf8');
@@ -50,7 +50,7 @@ function distancia(a, b) {
 
 const filas = [];
 const vistos = {};
-for (const l of leer('ig-2026-11-07.jsonl').split('\n').filter(x => x.trim())) {
+for (const l of leer('ig-2026-11-13.jsonl').split('\n').filter(x => x.trim())) {
   const r = JSON.parse(l);
   if (r.excluir || r.tipo === 'revisar' || r.tipo === 'video') continue;
   let id = r.sc;
@@ -60,7 +60,7 @@ for (const l of leer('ig-2026-11-07.jsonl').split('\n').filter(x => x.trim())) {
   filas.push({ ...r, id, fuente: 'Instagram', fecha: r.fecha || fechaDeCodigo(r.sc),
     link: esPosteo ? `https://www.instagram.com/p/${r.sc}/` : `https://www.instagram.com/${r.cuenta}/`, foto: fotos.has(`alq_${r.cuenta}_${r.sc}.jpg`) ? `fotos/alq_${r.cuenta}_${r.sc}.jpg` : null });
 }
-JSON.parse(leer('laarena-2026-11-07.json')).forEach((r, i) => {
+JSON.parse(leer('laarena-2026-11-13.json')).forEach((r, i) => {
   filas.push({ ...r, id: 'la' + i, cuenta: r.anunciante, fuente: 'La Arena', fecha: FECHA, estado: 'disponible',
     detalle: r.texto, link: 'https://www.laarena.com.ar/clasificados', foto: null });
 });
@@ -143,7 +143,7 @@ const html = leer('plantilla.html')
   .replace('/*DATOS*/[]', JSON.stringify(disponibles))
   .replace('/*ALQUILADOS*/[]', JSON.stringify(registro))
   .replace('/*PLAZA*/{}', JSON.stringify(PLAZA))
-  .replace(/__FECHA__/g, '7 de noviembre de 2026');
+  .replace(/__FECHA__/g, '13 de noviembre de 2026');
 fs.writeFileSync(path.join(DIR, '..', 'alquileres.html'), html);
 
 const n = disponibles.length, ubic = disponibles.filter(f => f.lat).length;

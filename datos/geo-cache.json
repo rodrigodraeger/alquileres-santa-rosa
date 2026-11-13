@@ -1079,5 +1079,104 @@
   "tipo": "place",
   "nombre": "15, Avenida Pedro Luro, Villa Alonso, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
   "precision": "exacta"
+ },
+ "{\"a\":\"Delfín Gallo 1451\"}": {
+  "lat": -36.633393,
+  "lon": -64.2853294,
+  "tipo": "place",
+  "nombre": "1451, Delfín Gallo, Villa Santillán, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Pellegrini 554\"}": {
+  "lat": -36.6225832,
+  "lon": -64.2926125,
+  "tipo": "place",
+  "nombre": "554, Pellegrini, Centro, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"9 de Julio 265\"}": {
+  "lat": -36.6199218,
+  "lon": -64.2946095,
+  "tipo": "place",
+  "nombre": "265, 9 de Julio, Centro, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"x\":[\"Andrada\",\"Luro\"]}": {
+  "lat": -36.6319268,
+  "lon": -64.2815113,
+  "tipo": "esquina",
+  "nombre": "Andrada y Luro",
+  "precision": "esquina"
+ },
+ "{\"a\":\"Avenida Uruguay 12\"}": {
+  "lat": -36.6252479,
+  "lon": -64.291514,
+  "tipo": "place",
+  "nombre": "12, Avenida Uruguay, Centro, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"x\":[\"Ferro\",\"Mendoza\"]}": {
+  "lat": -36.6114274,
+  "lon": -64.28853,
+  "tipo": "esquina",
+  "nombre": "Ferro y Mendoza",
+  "precision": "esquina"
+ },
+ "{\"a\":\"Alem 354\"}": {
+  "lat": -36.6231226,
+  "lon": -64.2866335,
+  "tipo": "place",
+  "nombre": "354, Alem, Centro, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Edison 951\"}": {
+  "lat": -36.6287324,
+  "lon": -64.2890136,
+  "tipo": "place",
+  "nombre": "951, Boulevard Tomás Edison, Nuestra Señora de Luján, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"x\":[\"González\",\"Lordi\"]}": {
+  "lat": -36.6447555,
+  "lon": -64.2841238,
+  "tipo": "esquina",
+  "nombre": "González y Lordi",
+  "precision": "esquina"
+ },
+ "{\"x\":[\"González\",\"Uruguay\"]}": {
+  "lat": -36.6252317,
+  "lon": -64.2964127,
+  "tipo": "esquina",
+  "nombre": "González y Uruguay",
+  "precision": "esquina"
+ },
+ "{\"a\":\"25 de Mayo, Toay\"}": {
+  "lat": -36.6807246,
+  "lon": -64.3863717,
+  "tipo": "neighbourhood",
+  "nombre": "25 de Mayo, San Cayetano, Toay, Municipio de Toay, Departamento Toay, La Pampa, 6303, Argentina",
+  "precision": "calle"
+ },
+ "{\"a\":\"Independencia, Toay\"}": {
+  "lat": -36.6690304,
+  "lon": -64.3669632,
+  "tipo": "residential",
+  "nombre": "Independencia, Mattiauda, Aguas Buenas, Toay, Municipio de Toay, Departamento Toay, La Pampa, 6303, Argentina",
+  "precision": "calle"
+ },
+ "{\"a\":\"Tucumán e Independencia, Toay\"}": null,
+ "{\"a\":\"España 1665, Toay\"}": {
+  "lat": -36.6781498,
+  "lon": -64.3821717,
+  "tipo": "place",
+  "nombre": "1665, España, Profesionales, ARA General Belgrano, Toay, Municipio de Toay, Departamento Toay, La Pampa, 6303, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Pasteur 1000\"}": {
+  "lat": -36.6336536,
+  "lon": -64.290569,
+  "tipo": "place",
+  "nombre": "1000, Luis Pasteur, Villa Santillán, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
  }
 }
