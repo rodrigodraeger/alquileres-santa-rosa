@@ -1178,5 +1178,12 @@
   "tipo": "place",
   "nombre": "1000, Luis Pasteur, Villa Santillán, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
   "precision": "exacta"
+ },
+ "{\"x\":[\"Córdoba\",\"Juncal\"]}": {
+  "lat": -36.6177575,
+  "lon": -64.271651,
+  "tipo": "esquina",
+  "nombre": "Córdoba y Juncal",
+  "precision": "esquina"
  }
 }
