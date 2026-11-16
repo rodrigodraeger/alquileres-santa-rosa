@@ -1185,5 +1185,12 @@
   "tipo": "esquina",
   "nombre": "Córdoba y Juncal",
   "precision": "esquina"
+ },
+ "{\"a\":\"Andrada 386\"}": {
+  "lat": -36.6321405,
+  "lon": -64.2770248,
+  "tipo": "place",
+  "nombre": "386, Clemente José Andrada, Congreso, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, L6300, Argentina",
+  "precision": "exacta"
  }
 }
