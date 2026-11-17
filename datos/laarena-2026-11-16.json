@@ -1,0 +1,167 @@
+[
+ {
+  "fuente": "La Arena",
+  "anunciante": "Alonso H.",
+  "tipo": "depto",
+  "dorm": 1,
+  "precio": null,
+  "direccion": "Don Bosco 330",
+  "texto": "1 dormitorio, 2 baños, céntrico, primera calidad.",
+  "contacto": "2954-15314335"
+ },
+ {
+  "fuente": "La Arena",
+  "anunciante": "Particular",
+  "tipo": "depto",
+  "dorm": 1,
+  "precio": 490000,
+  "precio_nota": "Final",
+  "direccion": "Lagos 646",
+  "texto": "1 dormitorio con patio, sin mascotas ni chicos. $490.000 final.",
+  "contacto": "2954662071"
+ },
+ {
+  "fuente": "La Arena",
+  "anunciante": "Particular",
+  "tipo": "depto",
+  "dorm": 1,
+  "precio": null,
+  "direccion": "Av. Luro 1600",
+  "texto": "1 dormitorio, cocina-comedor, terraza, sin mascotas.",
+  "contacto": "2954-529495"
+ },
+ {
+  "fuente": "La Arena",
+  "anunciante": "Particular",
+  "tipo": "depto",
+  "dorm": null,
+  "precio": 490000,
+  "precio_nota": "+ expensas aprox. $70.000",
+  "direccion": null,
+  "texto": "Departamento amplio, luminoso, con balcón.",
+  "contacto": "2954-670896"
+ },
+ {
+  "fuente": "La Arena",
+  "anunciante": "Particular",
+  "tipo": "depto",
+  "dorm": 1,
+  "precio": null,
+  "direccion": null,
+  "texto": "Dormitorio, cocina y baño, patio con salida independiente, sin niños ni mascotas, a persona o pareja.",
+  "contacto": "2954 412829 / 2954 271215"
+ },
+ {
+  "fuente": "La Arena",
+  "anunciante": "Dueño",
+  "tipo": "depto",
+  "dorm": 1,
+  "precio": null,
+  "direccion": "Rivadavia al 300",
+  "texto": "Céntrico, 1 dormitorio, cocina, baño y comedor. Solo WhatsApp.",
+  "contacto": "2954 625085"
+ },
+ {
+  "fuente": "La Arena",
+  "anunciante": "Dueño",
+  "tipo": "depto",
+  "dorm": 1,
+  "precio": null,
+  "direccion": "Córdoba, a 2 cuadras de la terminal",
+  "texto": "2 ambientes, cochera optativa. El mismo aviso ofrece monoambiente y 3 ambientes.",
+  "contacto": "2954 15596444"
+ },
+ {
+  "fuente": "La Arena",
+  "anunciante": "Dueño",
+  "tipo": "depto",
+  "dorm": 2,
+  "precio": null,
+  "direccion": "Córdoba, a 2 cuadras de la terminal",
+  "texto": "3 ambientes, cochera optativa. El mismo aviso ofrece monoambiente y 2 ambientes.",
+  "contacto": "2954 15596444"
+ },
+ {
+  "fuente": "La Arena",
+  "anunciante": "Dueño",
+  "tipo": "depto",
+  "dorm": 1,
+  "precio": 650000,
+  "precio_nota": "+ expensas + municipales",
+  "direccion": "Alem 555, 1er piso (Torre Alem)",
+  "texto": "Disponible en enero. 1 dormitorio con placard, luminoso, cocina separada, balcón al frente.",
+  "contacto": "2954449224"
+ },
+ {
+  "fuente": "La Arena",
+  "anunciante": "Dueño",
+  "tipo": "depto",
+  "dorm": 1,
+  "precio": null,
+  "direccion": "José Ingenieros 1248",
+  "texto": "Únicamente a estudiante: cocina-comedor, dormitorio, baño.",
+  "contacto": "2954 201315"
+ },
+ {
+  "fuente": "La Arena",
+  "anunciante": "Particular",
+  "tipo": "duplex",
+  "dorm": 1,
+  "precio": null,
+  "direccion": "Centro",
+  "texto": "Dúplex céntrico: planta baja ambiente único con kitchenette, baño, patio; planta alta dormitorio amplio, balcón, cochera opcional.",
+  "contacto": "15557832"
+ },
+ {
+  "fuente": "La Arena",
+  "anunciante": "GH Inmobiliaria",
+  "tipo": "depto",
+  "dorm": 1,
+  "precio": 450000,
+  "direccion": "Sobre Jujuy",
+  "texto": "1 dormitorio, cocina, baño, comedor. $450.000.",
+  "contacto": "15682186"
+ },
+ {
+  "fuente": "La Arena",
+  "anunciante": "Ingelhorn",
+  "tipo": "depto",
+  "dorm": 2,
+  "precio": 500000,
+  "precio_nota": "+ expensas e impuestos",
+  "direccion": "Barrio Vial, 2do piso",
+  "texto": "2 dormitorios, comedor, balcón. $500.000 más expensas e impuestos.",
+  "contacto": "389371 / 15-543026 (9 a 13 h)"
+ },
+ {
+  "fuente": "La Arena",
+  "anunciante": "Ingelhorn",
+  "tipo": "depto",
+  "dorm": 2,
+  "precio": 650000,
+  "direccion": "Av. Perón casi Gral. Acha",
+  "texto": "2 dormitorios con placard, lavadero, entrada para auto. $650.000.",
+  "contacto": "428923 / 15-543026 (9 a 13 h)"
+ },
+ {
+  "fuente": "La Arena",
+  "anunciante": "Ingelhorn",
+  "tipo": "duplex",
+  "dorm": 1,
+  "precio": 600000,
+  "precio_nota": "+ impuestos",
+  "direccion": "Quintana y Ayala, frente al Prado Español",
+  "texto": "1 dormitorio, dúplex, terraza. $600.000 más impuestos.",
+  "contacto": "428923 / 15-543026 (9 a 13 h)"
+ },
+ {
+  "fuente": "La Arena",
+  "anunciante": "Mauro Haag Propiedades",
+  "tipo": "depto",
+  "dorm": 1,
+  "precio": null,
+  "direccion": "Raúl B. Díaz",
+  "texto": "1 dormitorio, cocina comedor, baño y balcón, con ascensor.",
+  "contacto": "2954-326676"
+ }
+]

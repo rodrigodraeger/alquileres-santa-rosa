@@ -1192,5 +1192,98 @@
   "tipo": "place",
   "nombre": "386, Clemente José Andrada, Congreso, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, L6300, Argentina",
   "precision": "exacta"
+ },
+ "{\"x\":[\"Avenida San Martín\",\"Gil\"]}": {
+  "lat": -36.6208929,
+  "lon": -64.2898926,
+  "tipo": "esquina",
+  "nombre": "Avenida San Martín y Gil",
+  "precision": "esquina"
+ },
+ "{\"a\":\"Roque Sáenz Peña 1400, Toay\"}": null,
+ "{\"x\":[\"Avenida San Martín\",\"Oliver\"]}": {
+  "lat": -36.6208883,
+  "lon": -64.2834038,
+  "tipo": "esquina",
+  "nombre": "Avenida San Martín y Oliver",
+  "precision": "esquina"
+ },
+ "{\"a\":\"Plumerillo 702\"}": {
+  "lat": -36.627492,
+  "lon": -64.2733359,
+  "tipo": "place",
+  "nombre": "702, Plumerillo, Bella Vista, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, L6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"x\":[\"Schmith\",\"Tellez\"]}": null,
+ "{\"a\":\"Avenida Luro 1576\"}": {
+  "lat": -36.6267933,
+  "lon": -64.2814077,
+  "tipo": "primary",
+  "nombre": "Avenida Pedro Luro, Nuestra Señora de Luján, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, L6300, Argentina",
+  "precision": "calle"
+ },
+ "{\"a\":\"Avenida San Martín 558\"}": {
+  "lat": -36.6210527,
+  "lon": -64.2840015,
+  "tipo": "place",
+  "nombre": "558, Avenida San Martín, Centro, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"x\":[\"9 de Julio\",\"Villegas\"]}": {
+  "lat": -36.6198452,
+  "lon": -64.2950644,
+  "tipo": "esquina",
+  "nombre": "9 de Julio y Villegas",
+  "precision": "esquina"
+ },
+ "{\"a\":\"Lordi 1435\"}": {
+  "lat": -36.6383559,
+  "lon": -64.2917337,
+  "tipo": "place",
+  "nombre": "1435, Víctor Lordi, Villa Santillán, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"x\":[\"Jote\",\"Pato Colorado\"]}": {
+  "lat": -36.6594187,
+  "lon": -64.3302961,
+  "tipo": "esquina",
+  "nombre": "Jote y Pato Colorado",
+  "precision": "esquina"
+ },
+ "{\"x\":[\"Juan XXIII\",\"México\"]}": {
+  "lat": -36.6365438,
+  "lon": -64.2853819,
+  "tipo": "esquina",
+  "nombre": "Juan XXIII y México",
+  "precision": "esquina"
+ },
+ "{\"a\":\"Lagos 646\"}": {
+  "lat": -36.6188759,
+  "lon": -64.2828113,
+  "tipo": "place",
+  "nombre": "646, Hilario Lagos, Centro, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Rivadavia 300\"}": {
+  "lat": -36.617233,
+  "lon": -64.287275,
+  "tipo": "secondary",
+  "nombre": "Rivadavia, Centro, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "calle"
+ },
+ "{\"a\":\"Sáenz Peña 1400, Toay\"}": {
+  "lat": -36.6751942,
+  "lon": -64.3805591,
+  "tipo": "place",
+  "nombre": "1400, Sáenz Peña, Profesionales, ARA General Belgrano, Toay, Municipio de Toay, Departamento Toay, La Pampa, 6303, Argentina",
+  "precision": "exacta"
+ },
+ "{\"x\":[\"Schmi\",\"Tellez\"]}": {
+  "lat": -36.6330623,
+  "lon": -64.2767996,
+  "tipo": "esquina",
+  "nombre": "Schmi y Tellez",
+  "precision": "esquina"
  }
 }
