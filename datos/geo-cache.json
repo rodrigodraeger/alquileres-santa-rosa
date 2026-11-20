@@ -1379,5 +1379,54 @@
   "tipo": "place",
   "nombre": "1080, Catamarca, Tomás Mason Sur, Villa Tomás Mason, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
   "precision": "exacta"
+ },
+ "{\"a\":\"Bonnet 1096\"}": {
+  "lat": -36.5987902,
+  "lon": -64.2855276,
+  "tipo": "residential",
+  "nombre": "Juan Bonnet, Villa Elisa, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "calle"
+ },
+ "{\"a\":\"Padre Buodo 274\"}": {
+  "lat": -36.6221544,
+  "lon": -64.2785513,
+  "tipo": "primary",
+  "nombre": "Padre Buodo, Villa Elvina, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, L6300, Argentina",
+  "precision": "calle"
+ },
+ "{\"a\":\"Pueyrredón 477\"}": {
+  "lat": -36.6167032,
+  "lon": -64.27491,
+  "tipo": "place",
+  "nombre": "477, Pueyrredón, Villa Alonso, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, L6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Libertad 666, Toay\"}": {
+  "lat": -36.6639452,
+  "lon": -64.3698796,
+  "tipo": "place",
+  "nombre": "666, Libertad, Cortaderas II, Cortaderas, Toay, Municipio de Toay, Departamento Toay, La Pampa, L6303, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Raúl B. Díaz 367\"}": {
+  "lat": -36.6133924,
+  "lon": -64.2898989,
+  "tipo": "place",
+  "nombre": "367, Raúl B. Díaz, Tomás Mason Sur, Villa Tomás Mason, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"José Luro 138\"}": {
+  "lat": -36.6334442,
+  "lon": -64.2958413,
+  "tipo": "residential",
+  "nombre": "José Luro, Villa Santillán, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "calle"
+ },
+ "{\"a\":\"Congreso 564\"}": {
+  "lat": -36.6293376,
+  "lon": -64.2749011,
+  "tipo": "place",
+  "nombre": "564, Congreso, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, L6300, Argentina",
+  "precision": "exacta"
  }
 }
