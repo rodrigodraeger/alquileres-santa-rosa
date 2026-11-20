@@ -11,14 +11,25 @@
  },
  {
   "fuente": "La Arena",
-  "anunciante": "Particular",
+  "anunciante": "Casetta Inmobiliaria",
   "tipo": "depto",
   "dorm": 1,
-  "precio": 490000,
-  "precio_nota": "Final",
-  "direccion": "Lagos 646",
-  "texto": "1 dormitorio con patio, sin mascotas ni chicos. $490.000 final.",
-  "contacto": "2954662071"
+  "precio": 580000,
+  "precio_nota": "+ impuestos",
+  "direccion": "Centro",
+  "texto": "Departamento céntrico, 1 dormitorio, planta alta, 45 m². $580.000 + impuestos.",
+  "contacto": "2954-581865"
+ },
+ {
+  "fuente": "La Arena",
+  "anunciante": "Casetta Inmobiliaria",
+  "tipo": "depto",
+  "dorm": 2,
+  "precio": 680000,
+  "precio_nota": "+ expensas",
+  "direccion": "Padre Buodo y Belgrano",
+  "texto": "Depto 2 dormitorios, balcón. $680.000 + expensas.",
+  "contacto": "2954-581865"
  },
  {
   "fuente": "La Arena",
@@ -53,13 +64,13 @@
  },
  {
   "fuente": "La Arena",
-  "anunciante": "Dueño",
+  "anunciante": "Particular",
   "tipo": "depto",
   "dorm": 1,
   "precio": null,
-  "direccion": "Rivadavia al 300",
-  "texto": "Céntrico, 1 dormitorio, cocina, baño y comedor. Solo WhatsApp.",
-  "contacto": "2954 625085"
+  "direccion": "Catamarca 1080",
+  "texto": "1 dormitorio.",
+  "contacto": "2954-552702"
  },
  {
   "fuente": "La Arena",
@@ -67,19 +78,19 @@
   "tipo": "depto",
   "dorm": 1,
   "precio": null,
-  "direccion": "Córdoba, a 2 cuadras de la terminal",
-  "texto": "2 ambientes, cochera optativa. El mismo aviso ofrece monoambiente y 3 ambientes.",
-  "contacto": "2954 15596444"
+  "direccion": null,
+  "texto": "1 dormitorio a 8 cuadras de plaza San Martín, luminoso, placard, comedor, cocina, cochera opcional.",
+  "contacto": "2954-469014"
  },
  {
   "fuente": "La Arena",
   "anunciante": "Dueño",
   "tipo": "depto",
-  "dorm": 2,
+  "dorm": null,
   "precio": null,
-  "direccion": "Córdoba, a 2 cuadras de la terminal",
-  "texto": "3 ambientes, cochera optativa. El mismo aviso ofrece monoambiente y 2 ambientes.",
-  "contacto": "2954 15596444"
+  "direccion": "A 1 cuadra de la Facultad de Ciencias Económicas",
+  "texto": "Depto ideal estudiante.",
+  "contacto": "2954-550446"
  },
  {
   "fuente": "La Arena",
@@ -145,23 +156,22 @@
  },
  {
   "fuente": "La Arena",
-  "anunciante": "Ingelhorn",
-  "tipo": "duplex",
-  "dorm": 1,
-  "precio": 600000,
-  "precio_nota": "+ impuestos",
-  "direccion": "Quintana y Ayala, frente al Prado Español",
-  "texto": "1 dormitorio, dúplex, terraza. $600.000 más impuestos.",
-  "contacto": "428923 / 15-543026 (9 a 13 h)"
- },
- {
-  "fuente": "La Arena",
-  "anunciante": "Mauro Haag Propiedades",
+  "anunciante": "Peralta Elero",
   "tipo": "depto",
   "dorm": 1,
   "precio": null,
-  "direccion": "Raúl B. Díaz",
-  "texto": "1 dormitorio, cocina comedor, baño y balcón, con ascensor.",
-  "contacto": "2954-326676"
+  "direccion": "Sobre O'Higgins",
+  "texto": "Semipiso, 1 dormitorio, living comedor, cocina, lavadero y cochera.",
+  "contacto": "2954-565555"
+ },
+ {
+  "fuente": "La Arena",
+  "anunciante": "Peralta Elero",
+  "tipo": "depto",
+  "dorm": 1,
+  "precio": null,
+  "direccion": "Sobre Bartolomé Mitre",
+  "texto": "Semipiso, 1 dormitorio con placard, living comedor, cocina y cochera cubierta.",
+  "contacto": "2954-565555"
  }
 ]

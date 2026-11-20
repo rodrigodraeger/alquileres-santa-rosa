@@ -1285,5 +1285,99 @@
   "tipo": "esquina",
   "nombre": "Schmi y Tellez",
   "precision": "esquina"
+ },
+ "{\"x\":[\"Brasil\",\"Pío XII\"]}": {
+  "lat": -36.6283446,
+  "lon": -64.2971584,
+  "tipo": "esquina",
+  "nombre": "Brasil y Pío XII",
+  "precision": "esquina"
+ },
+ "{\"a\":\"Juncal 274\"}": {
+  "lat": -36.61629,
+  "lon": -64.2716332,
+  "tipo": "residential",
+  "nombre": "Juncal, Villa Alonso, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, L6300, Argentina",
+  "precision": "calle"
+ },
+ "{\"a\":\"José Ingenieros 1025\"}": {
+  "lat": -36.6308957,
+  "lon": -64.2902108,
+  "tipo": "place",
+  "nombre": "1025, José Ingenieros, Villa Santillán, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Calegaris 255\"}": {
+  "lat": -36.6377055,
+  "lon": -64.2787381,
+  "tipo": "place",
+  "nombre": "255, Doctor Juan Calegaris, Colonia Escalante, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, L6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Beltrán 1254\"}": {
+  "lat": -36.6038716,
+  "lon": -64.2801108,
+  "tipo": "place",
+  "nombre": "1254, Baltazar Beltrán, Aeropuerto, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, L6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Avenida San Martín Este 678\"}": null,
+ "{\"a\":\"Pampa 164\"}": {
+  "lat": -36.6146347,
+  "lon": -64.2791921,
+  "tipo": "place",
+  "nombre": "164, Pampa, Villa Alonso, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Pasaje Los Cactus 5\"}": {
+  "lat": -36.633499,
+  "lon": -64.3068504,
+  "tipo": "pedestrian",
+  "nombre": "Pasaje Los Cactus, Butaló I, Butaló, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "calle"
+ },
+ "{\"a\":\"Aconcagua 556\"}": {
+  "lat": -36.5948969,
+  "lon": -64.2902769,
+  "tipo": "residential",
+  "nombre": "Aconcagua, Villa Germinal, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "calle"
+ },
+ "{\"a\":\"Neuquén 245\"}": {
+  "lat": -36.6103418,
+  "lon": -64.2852505,
+  "tipo": "place",
+  "nombre": "245, Neuquén, Tomás Mason Sur, Villa del Busto, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"San Martín Este 678\"}": null,
+ "{\"x\":[\"Rivera\",\"Falucho\"]}": null,
+ "{\"x\":[\"Andrada\",\"Racedo\"]}": {
+  "lat": -36.6355058,
+  "lon": -64.2740188,
+  "tipo": "esquina",
+  "nombre": "Andrada y Racedo",
+  "precision": "esquina"
+ },
+ "{\"x\":[\"Benteveo\",\"Paloma Torcaza\"]}": {
+  "lat": -36.6569369,
+  "lon": -64.3511499,
+  "tipo": "esquina",
+  "nombre": "Benteveo y Paloma Torcaza",
+  "precision": "esquina"
+ },
+ "{\"a\":\"Villegas 36\"}": {
+  "lat": -36.6171405,
+  "lon": -64.2951327,
+  "tipo": "place",
+  "nombre": "36, Villegas, Centro, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
+ },
+ "{\"a\":\"Catamarca 1080\"}": {
+  "lat": -36.6141105,
+  "lon": -64.2959503,
+  "tipo": "place",
+  "nombre": "1080, Catamarca, Tomás Mason Sur, Villa Tomás Mason, Santa Rosa, Municipio de Santa Rosa, Departamento Capital, La Pampa, 6300, Argentina",
+  "precision": "exacta"
  }
 }
